@@ -1,11 +1,28 @@
-import logo from './logo.svg';
+import { useState, useEffect } from "react"
 import './App.css';
 
 function App() {
+
+  const [userName, setUserName] = useState('')
+
+  const getName = async () => {
+    const response = await fetch('https://heroku-test-group.herokuapp.com/user-name');
+    const user = await response.json();
+    console.log(user)
+    setUserName(user.name)
+
+  }
+  useEffect(() => {
+    getName()
+  }, [])
+
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>One source! Nilla was here</h1>
+        <h2>User { userName },</h2>
+        <h1>Welcome to Source One!</h1>
       </header>
     </div>
   );

@@ -21,8 +21,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>User { userName },</h2>
-        <h1>Welcome to Source One!</h1>
+        <h2>Hello { userName }!</h2>
+        <h1>Welcome to One Source!</h1>
       </header>
     </div>
   );

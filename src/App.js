@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>Hello { userName }!</h2>
-        <h1>Welcome to One Source!</h1>
+        <h1>Welcome to One Source.</h1>
       </header>
     </div>
   );

@@ -13,17 +13,11 @@ npm install
 npm start  
 ``` 
 ## Tester  
-Unit test
-```
-npm test  
-```
-Component test  
-```
-npm componenttest  
-```
-Integration test
-```
-npm integrationtest  
+```bash
+npm test # unit test  
+npm componenttest # component test  
+npm integrationtest # integration test  
+npm browsertest # browser test
 ``` 
 
 ***

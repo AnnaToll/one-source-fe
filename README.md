@@ -26,7 +26,14 @@ npm integrationtest
 
 ***
 
-# Onboarding  
+# Onboarding
+Languages
+```
+- HTML
+- JAVASCRIPT
+- CSS
+```
+
 Packages & Frameworks
 ```
 - NodeJS

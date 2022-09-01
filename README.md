@@ -47,3 +47,10 @@ Packages & Frameworks
 - dotenv
 - Mongoose
 ```
+# Script
+
+```
+docker build -t <image-name> .  
+docker run --name <container-name> <image-name>  
+
+```

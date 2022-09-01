@@ -14,10 +14,10 @@ npm start
 ``` 
 ## Tester  
 ```bash
-npm test # unit test  
-npm componenttest # component test  
-npm integrationtest # integration test  
-npm browsertest # browser test
+npm test # Unit test  
+npm componenttest # Component test  
+npm integrationtest # Integration test  
+npm browsertest # Browser test
 ``` 
 
 ***

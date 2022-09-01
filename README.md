@@ -1,15 +1,15 @@
 # One Source
 
-## TTFHW - Instructions
+# TTFHW - Instructions
 
-Frontend
+## Frontend
 ```
 git clone https://github.com/AnnaToll/one-source-fe.git    
 cd one-source-fe  
 npm install
 npm start  
 ``` 
-Tester  
+## Tester  
 Unit test
 ```
 npm test  

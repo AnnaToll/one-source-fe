@@ -36,6 +36,5 @@ Packages & Frameworks
 - Cors
 - Jest
 - dotenv
-- Mongoos
-
+- Mongoose
 ```

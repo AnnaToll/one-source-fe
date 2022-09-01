@@ -26,4 +26,16 @@ npm integrationtest
 
 ***
 
-# Onboarding
+# Onboarding  
+Packages & Frameworks
+```
+- NodeJS
+- React
+- Express  
+- Nodemon  
+- Cors
+- Jest
+- dotenv
+- Mongoos
+
+```

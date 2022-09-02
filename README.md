@@ -48,7 +48,7 @@ docker build -t <image-name> .
 docker run --name <container-name> <image-name>  
 
 ```
-## JWT - Instructions
+# JWT - Instructions
 ```mermaid
 sequenceDiagram
 	actor Client

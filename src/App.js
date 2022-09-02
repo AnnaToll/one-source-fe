@@ -6,7 +6,7 @@ function App() {
   const [userName, setUserName] = useState('')
 
   const getName = async () => {
-    const response = await fetch('https://heroku-test-group.herokuapp.com/api/v0/user-name');
+    const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/user-name`);
     const user = await response.json();
     console.log(user)
     setUserName(user.name)

@@ -69,7 +69,7 @@ services:
     tty: true  
 ```
 2. In the MongoDB connection string, add the correct username and password for the test database.
-3. Open Docker Desktop and run the following command:
+3. Open Docker Desktop and run the following commands:
 ```bash
 cd <backend-repository>
 docker-compose up

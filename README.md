@@ -48,7 +48,7 @@ version: "3.8"
 services:
   server:
     image: annatoll/one-source-server
-    container_name: api_c
+    container_name: one-source-server_c
     environment:
       - dbURI=mongodb+srv://<user-name-test-db>:<pwd-test-db>@cluster0.wtkif.mongodb.net/OneSourceComponentTest?retryWrites=true&w=majority
       - userName=/api/v0/user-name
@@ -60,7 +60,7 @@ services:
       - ./app/node_modules
   frontend:
     image: annatoll/one-source-app
-    container_name: one-source-fe_c
+    container_name: one-source-app_c
     environment:
       - REACT_APP_API_ADDRESS=http://localhost:4000
     ports: 

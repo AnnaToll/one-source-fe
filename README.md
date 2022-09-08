@@ -1,6 +1,6 @@
 # One Source Frontend
 
-This is the Frontend repository for a school project to learn how to go from development to production with different environments and ci/cd pipeline. There is also a One Source Backend repository which is connected to this one.
+This is the Frontend repository for a school project to learn how to go from development to production with different environments and ci/cd pipeline. There is also a [One Source Backend repository](https://github.com/nillali/heroku-test) which is connected to this one.
 
 # TTFHW - Instructions
 
@@ -41,12 +41,32 @@ Packages & Frameworks
 - dotenv
 - Mongoose
 ```
-# Script
-
-```
-docker build -t <image-name> .  
-docker run --name <container-name> <image-name>  
-
+# Docker
+To test and develop the application in Docker, create a docker-compose.yaml file in the rootfile of the Backend repository and the following code: 
+```yaml
+version: "3.8"
+services:
+  server:
+    image: annatoll/one-source-server
+    container_name: api_c
+    environment:
+      - dbURI=mongodb+srv://bellen01:jFBLJqy7K8W2jTFZ@cluster0.wtkif.mongodb.net/OneSourceComponentTest?retryWrites=true&w=majority
+      - userName=/api/v0/user-name
+      - PORT=4000
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./heroku-test:/app
+      - ./app/node_modules
+  frontend:
+    image: annatoll/one-source-app
+    container_name: one-source-fe_c
+    environment:
+      - REACT_APP_API_ADDRESS=http://localhost:4000
+    ports: 
+      - '3000:3000'
+    stdin_open: true
+    tty: true  
 ```
 # JWT - Instructions
 ```mermaid

@@ -50,7 +50,7 @@ services:
     image: annatoll/one-source-server
     container_name: api_c
     environment:
-      - dbURI=mongodb+srv://<user-name>:<pwd>@cluster0.wtkif.mongodb.net/OneSourceComponentTest?retryWrites=true&w=majority
+      - dbURI=mongodb+srv://<user-name-test-db>:<pwd-test-db>@cluster0.wtkif.mongodb.net/OneSourceComponentTest?retryWrites=true&w=majority
       - userName=/api/v0/user-name
       - PORT=4000
     ports:

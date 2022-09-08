@@ -56,7 +56,7 @@ services:
     ports:
       - '4000:4000'
     volumes:
-      - ./heroku-test:/app
+      - ./:/app
       - ./app/node_modules
   frontend:
     image: annatoll/one-source-app

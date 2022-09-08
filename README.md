@@ -42,7 +42,7 @@ Packages & Frameworks
 - Mongoose
 ```
 # Docker
-1. To test and develop the application in Docker, create a docker-compose.yaml file in the rootfolder of the [One Source Backend repository](https://github.com/nillali/heroku-test) and paste the following code: 
+1. To test and develop the application in Docker, create a docker-compose.yaml file (locally on your computer) in the rootfolder of the [One Source Backend repository](https://github.com/nillali/heroku-test) and paste the following code: 
 ```yaml
 version: "3.8"
 services:

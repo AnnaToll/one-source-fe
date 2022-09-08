@@ -74,6 +74,14 @@ services:
 cd <backend-repository>
 docker-compose up
 ```
+# Helpful snippets
+```bash
+docker-compose down --rmi all -v # Stops conntainers, and also removes all containers and images in Docker created with docker-compose up
+heroku git:remote -a <project-name> # Add connection to a Heroku server
+git remote rm heroku # Removes the current connection to Heroku
+git remote add origin <remote-url> # Add connection to a Github repo
+git remote rm <remote-url> # Remove connection to a Github repo
+```
 # JWT - Instructions
 ```mermaid
 sequenceDiagram

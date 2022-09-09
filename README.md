@@ -54,9 +54,9 @@ services:
     environment:
       - dbURI=mongodb+srv://<user-name-test-db>:<pwd-test-db>@cluster0.wtkif.mongodb.net/OneSourceComponentTest?retryWrites=true&w=majority
       - userName=/api/v0/user-name
-      - PORT=4000
+      - PORT=4050
     ports:
-      - '4000:4000'
+      - '4050:4050'
     volumes:
       -  ./:/app
       - ./app/node_modules
@@ -64,7 +64,7 @@ services:
     image: annatoll/one-source-app
     container_name: one-source-app_c
     environment:
-      - REACT_APP_API_ADDRESS=http://localhost:4000
+      - REACT_APP_API_ADDRESS=http://localhost:4050
     ports: 
       - '3000:3000'
     stdin_open: true

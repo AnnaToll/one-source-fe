@@ -41,6 +41,8 @@ Packages & Frameworks
 - dotenv
 - Mongoose
 ```
+# API documentation
+To access API documentation, run backend in the environment of your choice, and then navigate to http://<your-backend-environment>/api-docs.
 # Docker
 1. To test and develop the application in Docker, create a docker-compose.yaml file (locally on your computer) in the rootfolder of the [One Source Backend repository](https://github.com/nillali/heroku-test) and paste: 
 ```yaml

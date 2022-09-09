@@ -49,7 +49,7 @@ To access the API documentation, run backend in the environment of your choice, 
 version: "3.8"
 services:
   server:
-    build: <relative-path-to-backend-repository>
+    build: ./
     container_name: one-source-server_c
     environment:
       - dbURI=mongodb+srv://<user-name-test-db>:<pwd-test-db>@cluster0.wtkif.mongodb.net/OneSourceComponentTest?retryWrites=true&w=majority
@@ -58,7 +58,7 @@ services:
     ports:
       - '4000:4000'
     volumes:
-      -  relative-path-to-backend-repository>:/app
+      -  ./:/app
       - ./app/node_modules
   frontend:
     image: annatoll/one-source-app

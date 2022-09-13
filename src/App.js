@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import LoginContainer from "./components/LoginContainer";
 import Consultants from "./components/Consultants";
+import PugEngine from "./Chatbot/PugEngine";
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
         <Header handleClick={handleClick} />
         <Home />
         <Consultants />
+        <PugEngine />
       </Router>
     </div>
   );

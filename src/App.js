@@ -9,6 +9,7 @@ import {
 import Header from "./components/Header";
 import Home from "./components/Home";
 import LoginContainer from "./components/LoginContainer";
+import Consultants from "./components/Consultants";
 import PugEngine from "./Chatbot/PugEngine";
 
 function App() {
@@ -30,15 +31,16 @@ function App() {
   const [toggleHide, setToggleHide] = useState("hidden")
 
   const handleClick = () => {
-      toggleHide === "hidden" ? setToggleHide("flex") : setToggleHide("hidden")
+    toggleHide === "hidden" ? setToggleHide("flex") : setToggleHide("hidden")
   }
 
   return (
     <div className="App">
       <Router>
-        <LoginContainer toggleHide={ toggleHide } handleClick={ handleClick } />
-        <Header handleClick={ handleClick } />
+        <LoginContainer toggleHide={toggleHide} handleClick={handleClick} />
+        <Header handleClick={handleClick} />
         <Home />
+        <Consultants />
         <PugEngine />
       </Router>
     </div>

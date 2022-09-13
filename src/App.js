@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react"
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import LoginContainer from "./components/LoginContainer";
 
 function App() {
 
@@ -17,13 +26,19 @@ function App() {
   }, [])
 
 
+  const [toggleHide, setToggleHide] = useState("hidden")
+
+  const handleClick = () => {
+      toggleHide === "hidden" ? setToggleHide("flex") : setToggleHide("hidden")
+  }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>Hello { userName }!</h2>
-        <h1>Welcome to One Source.</h1>
-      </header>
+      <Router>
+        <LoginContainer toggleHide={ toggleHide } handleClick={ handleClick } />
+        <Header handleClick={ handleClick } />
+        <Home />
+      </Router>
     </div>
   );
 }

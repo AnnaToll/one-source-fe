@@ -1,41 +1,47 @@
-// import { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Consultants from "./components/Consultants";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Header from "./components/Header";
 import Home from "./components/Home";
-
-// const baseLink = process.env.REACT_APP_API_ADDRESS || "http://localhost:3001"
+import LoginContainer from "./components/LoginContainer";
+import Consultants from "./components/Consultants";
 
 function App() {
 
-  // const [userName, setUserName] = useState('')
+  const [userName, setUserName] = useState('')
 
-  // const getName = async () => {
-  //   const response = await fetch(`${baseLink}/api/v0/user-name`);
-  //   const user = await response.json();
-  //   console.log(user)
-  //   setUserName(user.name)
+  const getName = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/user-name`);
+    const user = await response.json();
+    console.log(user)
+    setUserName(user.name)
 
-  // }
-  // useEffect(() => {
-  //   getName()
-  // }, [])
+  }
+  useEffect(() => {
+    getName()
+  }, [])
 
 
+  const [toggleHide, setToggleHide] = useState("hidden")
+
+  const handleClick = () => {
+    toggleHide === "hidden" ? setToggleHide("flex") : setToggleHide("hidden")
+  }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/consultants" element={<Consultants />} />
-      </Routes>
-    </Router>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <h2>Hello {userName}!</h2>
-    //     <h1>Welcome to One Source.</h1>
-    //   </header>
-    // </div>
+    <div className="App">
+      <Router>
+        <LoginContainer toggleHide={toggleHide} handleClick={handleClick} />
+        <Header handleClick={handleClick} />
+        <Home />
+        <Consultants />
+      </Router>
+    </div>
   );
 }
 

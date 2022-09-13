@@ -9,6 +9,7 @@ import {
 import Header from "./components/Header";
 import Home from "./components/Home";
 import LoginContainer from "./components/LoginContainer";
+import PugEngine from "./Chatbot/PugEngine";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <LoginContainer toggleHide={ toggleHide } handleClick={ handleClick } />
         <Header handleClick={ handleClick } />
         <Home />
+        <PugEngine />
       </Router>
     </div>
   );

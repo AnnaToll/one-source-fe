@@ -14,7 +14,7 @@ const Login = ({ setCurrent }) => {
             body: loginDetails
         }
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/auth`, settings)
+            const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/authorize`, settings)
             const data = await response.json()
             if (data.isAuthorized) {
 

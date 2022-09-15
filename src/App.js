@@ -10,7 +10,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import LoginContainer from "./components/LoginContainer";
 import Consultants from "./components/Consultants";
-import PugEngine from "./Chatbot/PugEngine";
+import Chat from "./components/Chat/Chatbot";
 
 function App() {
 
@@ -29,8 +29,8 @@ function App() {
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
         <Header handleClick={handleClick} user={user} setUser={setUser} />
         <Home />
+        <div className="Chat"><Chat /></div>
         <Consultants />
-        <PugEngine />
       </Router>
     </div>
   );

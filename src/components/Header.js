@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Header = ({ handleClick }) => {
+const Header = ({ handleClick, user, setUser }) => {
 
     return (
         <header>
@@ -11,9 +11,14 @@ const Header = ({ handleClick }) => {
                 <Link to='/about'>About</Link>
                 <Link to='/team'>The team</Link>
                 <Link to='/contact'>Contact</Link>
-                <div className="login-icon-container" onClick={ handleClick }>
-                    <i className="bi bi-person-circle"></i>
-                </div>
+                {
+                    user ?
+                    <div>Hi {user.name}!  |  <span onClick={() => setUser(null)}>Logout</span></div>
+                    :
+                    <div className="login-icon-container" onClick={ handleClick }>
+                        <i className="bi bi-person-circle"></i>
+                    </div>
+                }
             </nav>
         </header>
     )

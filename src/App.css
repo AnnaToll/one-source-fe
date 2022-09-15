@@ -115,6 +115,7 @@ h1 {
 
 h5 {
   color: rgb(177, 177, 177);
+  margin-top: 20px;
 }
 
 .strong {
@@ -136,4 +137,13 @@ h5 {
   width: 84px;
   height: 84px;
   z-index: 150;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: rgb(91, 210, 0);
 }

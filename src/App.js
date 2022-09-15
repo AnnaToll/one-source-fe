@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -14,32 +14,20 @@ import PugEngine from "./Chatbot/PugEngine";
 
 function App() {
 
-  const [userName, setUserName] = useState('')
-
-  const getName = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/user-name`);
-    const user = await response.json();
-    console.log(user)
-    setUserName(user.name)
-
-  }
-  useEffect(() => {
-    getName()
-  }, [])
-
-
   const [toggleHide, setToggleHide] = useState("hidden")
 
   const handleClick = () => {
     toggleHide === "hidden" ? setToggleHide("flex") : setToggleHide("hidden")
   }
 
+  const [user, setUser] = useState(null)
+
   return (
     <div className="App">
       <Router>
         <div className="test" />
-        <LoginContainer toggleHide={toggleHide} handleClick={handleClick} />
-        <Header handleClick={handleClick} />
+        <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
+        <Header handleClick={handleClick} user={user} setUser={setUser} />
         <Home />
         <Consultants />
         <PugEngine />

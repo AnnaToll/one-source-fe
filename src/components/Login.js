@@ -1,36 +1,48 @@
 import { useState } from "react"
 
-const Login = ({ setCurrent }) => {
+const Login = ({ setCurrent, setUser, setToggleHide }) => {
 
-    const [loginDetails, setLoginDetails] = useState({
-        email: '',
-        pwd: ''
-    })
+    const [loginDetails, setLoginDetails] = useState({})
+
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
 
     const handleSubmit = async (e) => {
+        e.preventDefault()
         const settings = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: loginDetails
+            body: JSON.stringify(loginDetails)
         }
         try {
             const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/authorize`, settings)
             const data = await response.json()
-            if (data.isAuthorized) {
-
+            if (response.status === 200) {
+                setError('')
+                setUser(data)
+                setLoginDetails({})
+                setSuccess(`Welcome ${data.name}! You are logged in.`)
+                setTimeout(function(){
+                    setToggleHide("hidden")
+                    setSuccess('')
+               }, 1300); 
+            } else if (response.status === 401) {
+                setError(data.error)
             } else {
-
+                setError(`Oops, something went wrong! Error code: ${response.status}. Please try again or contact us for more information.`)
             }
         }
         catch (error) {
-            console.log(error)
+            setError(`Oops, something went wrong! Please try again or contact us for more information.`)
         }
     }
 
     return (
         <>
             <h2>Login</h2>
-            <form onSubmit={e => handleSubmit(e)}>
+            { error ? <p className="error">{error}</p> : '' }
+            { success ? <p className="success">{success}</p> : '' }
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <label>
                     Email:
                     <input

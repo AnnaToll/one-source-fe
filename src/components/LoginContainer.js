@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Login from "./Login"
 import Register from "./Register"
 
-const LoginContainer = ({ toggleHide, handleClick }) => {
+const LoginContainer = ({ toggleHide, setToggleHide, handleClick, setUser }) => {
 
     const [current, setCurrent] = useState('login')
 
@@ -12,9 +12,9 @@ const LoginContainer = ({ toggleHide, handleClick }) => {
             <section className="login-container">
                 {
                     current === 'login' ?
-                    <Login setCurrent={setCurrent} />
+                    <Login setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
                     :
-                    <Register setCurrent={setCurrent} />
+                    <Register setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
                 }
             </section>
         </div>

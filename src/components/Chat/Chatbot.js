@@ -49,7 +49,7 @@ function Chat () {
         <div className="Chatbot">
             <ThemeProvider theme={theme}>
                 <Chatbot 
-                headerTitle="Pug Support"
+                headerTitle="Puggy Support"
                 steps={steps} 
                 {...config}
             />

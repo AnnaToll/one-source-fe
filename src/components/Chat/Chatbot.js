@@ -40,7 +40,7 @@ const theme = {
 };
 
 const config = {
-    botAvatar: 'https://images.unsplash.com/photo-1523626797181-8c5ae80d40c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+    botAvatar: "PugChat.png",
     floating: true,
 };
 
@@ -48,7 +48,11 @@ function Chat () {
     return (
         <div className="Chatbot">
             <ThemeProvider theme={theme}>
-                <Chatbot steps={steps} />
+                <Chatbot 
+                headerTitle="Pug Support"
+                steps={steps} 
+                {...config}
+            />
             </ThemeProvider>
             
         </div>

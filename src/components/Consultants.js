@@ -33,7 +33,7 @@ const Consultants = () => {
         <h1>Vårt dreamteam består av dessa grymma konsulter</h1>
       </div>
       {consultants.map((person) => (
-        <div>
+        <div key={person.id}>
           <h2>{person.name}</h2>
           <p>{person.phone}</p>
           <p>{person.email}</p>

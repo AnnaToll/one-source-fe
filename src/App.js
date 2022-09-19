@@ -1,26 +1,25 @@
-import { useState } from "react"
+import { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import LoginContainer from "./components/LoginContainer";
-import Consultants from "./components/Consultants";
-import Chat from "./components/Chat/Chatbot";
+  Link,
+} from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import LoginContainer from './components/LoginContainer';
+import Consultants from './components/Consultants';
+import Chat from './components/Chat/Chatbot';
 
 function App() {
-
-  const [toggleHide, setToggleHide] = useState("hidden")
+  const [toggleHide, setToggleHide] = useState('hidden');
 
   const handleClick = () => {
-    toggleHide === "hidden" ? setToggleHide("flex") : setToggleHide("hidden")
-  }
+    toggleHide === 'hidden' ? setToggleHide('flex') : setToggleHide('hidden');
+  };
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   return (
     <div className="App">

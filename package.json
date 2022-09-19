@@ -7,7 +7,6 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-    "husky": "^8.0.1",
     "jest": "^27.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,9 +24,9 @@
     "componenttest": "jest",
     "integrationtest": "jest",
     "browsertest": "cypress",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint ./"
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -42,5 +41,16 @@
   },
   "script": {
     "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "install": "^0.13.0",
+    "npm": "^8.19.2"
   }
 }

@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-=======
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
->>>>>>> 6fc0ef375da8c70a37e956f8018cad706b1d01ef
 
 function Header({ handleClick, user, setUser }) {
   return (

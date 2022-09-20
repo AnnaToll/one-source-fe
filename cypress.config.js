@@ -7,4 +7,8 @@ module.exports = defineConfig({
       bundler: "webpack",
     },
   },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> dadd638d20793bdc53a851ea7c08753a7dd57fc8

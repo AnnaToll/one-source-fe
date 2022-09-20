@@ -71,9 +71,5 @@ function Login({ setCurrent, setUser, setToggleHide }) {
   );
 }
 
-<<<<<<< HEAD
 export default Login
-// export { handleSubmit }
-=======
-export default Login;
->>>>>>> 6fc0ef375da8c70a37e956f8018cad706b1d01ef
+

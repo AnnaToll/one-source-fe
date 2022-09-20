@@ -92,9 +92,4 @@ function Register({ setCurrent, setUser, setToggleHide }) {
   );
 }
 
-<<<<<<< HEAD
 export default Register
-// export { handleSubmit }
-=======
-export default Register;
->>>>>>> 6fc0ef375da8c70a37e956f8018cad706b1d01ef

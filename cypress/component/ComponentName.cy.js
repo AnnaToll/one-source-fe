@@ -1,5 +1,5 @@
-describe('Learning cypress', () => {
-  it('Visit Kitchen sink', () => {
-    cy.visit('https://example.cypress.io')
+describe('My first test', () => {
+  it('does not do much', () => {
+    expect(true).to.equal(false)
   })
 })

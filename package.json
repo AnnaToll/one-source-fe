@@ -25,7 +25,8 @@
     "integrationtest": "jest",
     "browsertest": "cypress",
     "prepare": "husky install",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "cypress:open": "cypress open"
   },
   "browserslist": {
     "production": [
@@ -43,6 +44,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "cypress": "^10.8.0",
     "eslint": "^8.23.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",

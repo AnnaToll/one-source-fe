@@ -8,6 +8,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_ADDRESS: ${{secrets.COMPONENT_TEST_SERVER}}
 
     strategy:
       matrix:

@@ -24,13 +24,8 @@
     "componenttest": "jest",
     "integrationtest": "jest",
     "browsertest": "cypress",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "prepare": "husky install",
+    "cypress:open": "cypress open"
   },
   "browserslist": {
     "production": [
@@ -44,7 +39,7 @@
       "last 1 safari version"
     ]
   },
-  "script": {
-    "prepare": "husky install"
+  "devDependencies": {
+    "cypress": "^10.8.0"
   }
 }

@@ -92,3 +92,4 @@ const Register = ({ setCurrent, setUser, setToggleHide }) => {
 }
 
 export default Register
+// export { handleSubmit }

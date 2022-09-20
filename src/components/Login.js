@@ -71,3 +71,4 @@ const Login = ({ setCurrent, setUser, setToggleHide }) => {
 }
 
 export default Login
+// export { handleSubmit }

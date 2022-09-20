@@ -5,7 +5,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+
+  Component-test:
 
     runs-on: ubuntu-latest
     env:
@@ -29,4 +30,28 @@ jobs:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "one-source-integration-app" #Must be unique in Heroku
         heroku_email: "anna.toll@protonmail.com"
-        buildpack: heroku/nodejs
+
+  Integration-test:
+
+    runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_ADDRESS: ${{secrets.INTEGRATION_TEST_SERVER}}
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm test
+    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "one-source-integration-app" #Must be unique in Heroku
+        heroku_email: "anna.toll@protonmail.com"

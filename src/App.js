@@ -1,31 +1,11 @@
 import { useState } from 'react';
 import './App.css';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import {  BrowserRouter as Router,} from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import LoginContainer from "./components/LoginContainer";
 import Consultants from "./components/Consultants";
-import PugEngine from "./Chatbot/PugEngine";
-=======
-=======
->>>>>>> dadd638d20793bdc53a851ea7c08753a7dd57fc8
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-} from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import LoginContainer from './components/LoginContainer';
-import Consultants from './components/Consultants';
 import Chat from './components/Chat/Chatbot';
-<<<<<<< HEAD
->>>>>>> 6fc0ef375da8c70a37e956f8018cad706b1d01ef
-=======
->>>>>>> dadd638d20793bdc53a851ea7c08753a7dd57fc8
 
 function App() {
   const [toggleHide, setToggleHide] = useState('hidden');

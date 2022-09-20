@@ -12,10 +12,10 @@ function LoginContainer({
       <div onClick={handleClick} className="fs" />
       <section className="login-container">
         {
-                    current === 'login'
-                      ? <Login setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
-                      : <Register setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
-                }
+          current === 'login'
+          ? <Login setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
+          : <Register setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
+        }
       </section>
     </div>
   );

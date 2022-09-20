@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -12,21 +11,21 @@ function Header({ handleClick, user, setUser }) {
         <Link to="/team">The team</Link>
         <Link to="/contact">Contact</Link>
         {
-                    user
-                      ? (
-                        <div>
-                          Hi
-                          {user.name}
-                          !  |
-                          <span onClick={() => setUser(null)}>Logout</span>
-                        </div>
-                      )
-                      : (
-                        <div className="login-icon-container" onClick={handleClick}>
-                          <i className="bi bi-person-circle" />
-                        </div>
-                      )
-                }
+            user
+              ? (
+                <div>
+                  Hi
+                  {user.name}
+                  !  |
+                  <span onClick={() => setUser(null)}>Logout</span>
+                </div>
+              )
+              : (
+                <div className="login-icon-container" onClick={handleClick}>
+                  <i className="bi bi-person-circle" />
+                </div>
+              )
+          }
       </nav>
     </header>
   );

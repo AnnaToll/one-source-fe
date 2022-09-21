@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Login from './Login';
 import Register from './Register';
+import './components.css';
 
 function LoginContainer({
   toggleHide, setToggleHide, handleClick, setUser,

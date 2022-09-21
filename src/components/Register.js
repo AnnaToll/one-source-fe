@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './components.css';
 
 function Register({ setCurrent, setUser, setToggleHide }) {
   const [loginDetails, setLoginDetails] = useState({});

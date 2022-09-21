@@ -2,10 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import {  BrowserRouter as Router,} from "react-router-dom";
+
 import Header from "./components/Header";
 import Home from "./components/Home";
 import LoginContainer from "./components/LoginContainer";
 import Consultants from "./components/Consultants";
+import About from "./components/About";
 
 function App() {
   const [toggleHide, setToggleHide] = useState('hidden');
@@ -19,11 +21,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="test" />
+        
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
         <Header handleClick={handleClick} user={user} setUser={setUser} />
-        <Home />
-        <Consultants />
+        
+        <div className="Page-Home"><Home /></div>
+        
+        <div className="Page-Consultants"><Consultants /></div>
+
+        
       </Router>
     </div>
   );

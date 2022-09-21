@@ -24,7 +24,7 @@
     "test": "jest",
     "componenttest": "jest",
     "integrationtest": "jest",
-    "browsertest": "cypress",
+    "browsertest": "cypress run",
     "prepare": "husky install",
     "lint": "eslint ./",
     "cypress:open": "cypress open"

@@ -1,3 +1,5 @@
+import './components.css';
+
 function Home() {
   return (
     <section className="home-container">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './components.css';
 
 const baseLink = process.env.REACT_APP_API_ADDRESS || 'http://localhost:3001';
 

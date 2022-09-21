@@ -27,9 +27,9 @@ jobs:
     - run: npm test
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_api_key: ${{secrets.ISSA_HEROKU_API_KEY}}
         heroku_app_name: "one-source-integration-app" #Must be unique in Heroku
-        heroku_email: "anna.toll@protonmail.com"
+        heroku_email: "isabelle.annie.karlsson@gmail.com"
 
   Integration-test:
 

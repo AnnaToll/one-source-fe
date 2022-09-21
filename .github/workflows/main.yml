@@ -32,6 +32,7 @@ jobs:
         heroku_email: "isabelle.annie.karlsson@gmail.com"
 
   Integration-test:
+    needs: Component-test
 
     runs-on: ubuntu-latest
     env:

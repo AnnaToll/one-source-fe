@@ -65,7 +65,7 @@ function Login({ setCurrent, setUser, setToggleHide }) {
       </form>
       <h5>
         Or
-        <span className="strong" onClick={() => setCurrent('register')}>register an account</span>
+        <span className="strong" onClick={() => setCurrent('register')}> register an account</span>
       </h5>
     </>
   );

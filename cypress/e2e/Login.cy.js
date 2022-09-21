@@ -1,0 +1,59 @@
+describe('Testing Login', () => {
+  it('Logs in and out successfully', () => {
+    cy.visit('http://localhost:3000')
+
+    cy.get('.login-icon-container')
+      .click()
+
+    cy.get('.login-container [name=email]')
+      .type('testar@test.se')
+
+    cy.get('.login-container [name=pwd]')
+      .type('hejhej')
+    
+    cy.get('.login-container [type=submit]')
+      .click()
+    
+    cy.get('.login-container .success')
+    .should('exist')
+
+    cy.get('nav')
+      .children()
+      .last()
+      .contains('Anna')
+
+    cy.get('nav')
+      .children()
+      .last()
+      .children()
+      .last()
+      .click()
+
+      cy.get('.login-icon-container')
+        .should('exist')
+  })
+
+  it('Does not log in successfully', () => {
+    cy.visit('http://localhost:3000')
+
+    cy.get('.login-icon-container')
+      .click()
+
+    cy.get('.login-container [name=email]')
+      .type('testar@test.se')
+
+    cy.get('.login-container [name=pwd]')
+      .type('hejhej1')
+    
+    cy.get('.login-container [type=submit]')
+      .click()
+    
+    cy.get('.login-container .error')
+    .should('have.text', 'Password and email do not match.')
+
+    cy.get('.login-container')
+      .should('exist')
+
+  })
+
+})

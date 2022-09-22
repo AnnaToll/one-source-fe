@@ -93,4 +93,4 @@ function Register({ setCurrent, setUser, setToggleHide }) {
   );
 }
 
-export default Register
+export default Register;

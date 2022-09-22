@@ -72,5 +72,5 @@ function Login({ setCurrent, setUser, setToggleHide }) {
   );
 }
 
-export default Login
+export default Login;
 

@@ -1,7 +1,4 @@
 /node_modules
 /public/build
 /cypress
-/src/components
-/src/index.js
-app.js
 cypress.config.js

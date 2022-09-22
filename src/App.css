@@ -35,3 +35,14 @@
   width: 100vw;
   flex: 1; 
 }
+
+.Page-Footer {
+  position: relative;
+  background-color: black;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: auto;
+  width: 100vw;
+  flex: 1; 
+}

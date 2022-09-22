@@ -30,6 +30,7 @@ jobs:
         heroku_api_key: ${{secrets.ISSA_HEROKU_API_KEY}}
         heroku_app_name: "fe-one-source-v3" #Must be unique in Heroku
         heroku_email: "isabelle.annie.karlsson@gmail.com"
+        branch: "main"
 
   Integration-test:
     needs: Component-test

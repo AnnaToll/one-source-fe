@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './components.css';
+// import './components.css';
+import styles from './Consultants.module.css';
 
 const baseLink = process.env.REACT_APP_API_ADDRESS || 'http://localhost:3001';
 
@@ -16,29 +17,22 @@ function Consultants() {
     getConsultants();
   }, []);
 
-  // useEffect(() => {
-  //   fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/users`)
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setConsultants(data)
-  //     })
-  // })
-
   return (
-    <main>
-      <div>
-        <h1>Vårt dreamteam består av dessa grymma konsulter</h1>
+    <main className={styles.mainContainer}>
+      <div className={styles.headingContainer}>
+        <h2 className={styles.heading}>We wouldn't be One Source without our <span className={styles.dreamteam}>awesome dreamteam</span>!</h2>
       </div>
+      <section className={styles.teamMemberContainer}>
       {consultants.map((person) => (
-        <div key={person.id}>
-          <h2>{person.name}</h2>
-          <p>{person.phone}</p>
-          <p>{person.email}</p>
-          <p>Frontendutvecklare</p>
+        <div className={styles.teamMember} key={person.id}>
+          <img src={`/IMG/${person.image}`} alt={person.name} className={styles.image} />
+          <h3>{person.name}</h3>
+          <div><span className={styles.icons}><i className="bi bi-phone-fill"></i></span><i>{person.phone}</i></div>
+          <div><span className={styles.icons}><i className="bi bi-envelope-fill"></i></span><i>{person.email}</i></div>
+          <p className={styles.skills}>frontend developer</p>
         </div>
       ))}
+      </section>
     </main>
   );
 }

@@ -1,5 +1,20 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
+/* Color Palette */
+/* ex) background-color: var(--white) */
+:root {
+  /*Cerulean Blue*/
+  --blue: #3A51B7;
+  /*Burnt Sienna*/
+  --sienna: #EE6C4D;
+  /*Middle red*/
+  --red: #F38D68;
+  /*Persian Green*/
+  --green: #17A398;
+  /*Jet*/
+  --jet: #33312E;
+}
+
 * {
   margin: 0;
   padding: 0;

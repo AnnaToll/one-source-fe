@@ -1,12 +1,12 @@
 import './components.css';
 
-function About() {
+function Contact() {
   return (
-    <section className="about-container">
+    <section className="contact-container">
         
-        <h1 className='about-title'>About us!</h1>
+        <h1>Contact</h1>
         
-        <h3 className='about-desc'>
+        <h3>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget maximus nisi. Donec aliquam leo at nulla ornare interdum. 
         Vivamus sit amet est fermentum, finibus sem a, maximus orci. Praesent orci mauris, lacinia quis dignissim ut, vehicula vel nulla. 
         Vestibulum sagittis faucibus ipsum sit amet mattis. Vestibulum sed orci libero. Duis felis tellus, feugiat nec turpis sed, 
@@ -18,4 +18,4 @@ function About() {
   );
 }
 
-export default About;
+export default Contact;

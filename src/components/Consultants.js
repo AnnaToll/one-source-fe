@@ -28,7 +28,7 @@ function Consultants() {
 
   return (
     <main>
-      <div>
+      <div className="consultants-container">
         <h1>Vårt dreamteam består av dessa grymma konsulter</h1>
       </div>
       {consultants.map((person) => (

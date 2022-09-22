@@ -25,10 +25,11 @@ function App() {
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
         <Header handleClick={handleClick} user={user} setUser={setUser} />
         
-        <div className="Page-Home"><Home /></div>
-        
-        <div className="Page-Consultants"><Consultants /></div>
-
+        <div className="Page-wrapper">
+          <div className="Page-Home"><Home /></div>
+          <div className="Page-About"><About /></div>
+          <div className="Page-Consultants"><Consultants /></div>
+        </div>
         
       </Router>
     </div>

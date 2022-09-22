@@ -7,14 +7,31 @@
 }
 
 /*Page style*/
+
+.Page-wrapper {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
 .Page-Home {
   position: relative;
-  height: 100%;
-  background-color: pink;
+  height: 100vh;
+  width: 100vw;
+  flex: 1; 
+}
+
+.Page-About {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  flex: 1; 
 }
 
 .Page-Consultants {
   position: relative;
-  height: 100%;
   background-color: lightblue;
+  height: 100vh;
+  width: 100vw;
+  flex: 1; 
 }

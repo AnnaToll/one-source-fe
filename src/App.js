@@ -8,7 +8,7 @@ import Home from './components/Home';
 import LoginContainer from './components/LoginContainer';
 import Consultants from './components/Consultants';
 import About from './components/About';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
           <div className="Page-Home"><Home /></div>
           <div className="Page-About"><About /></div>
           <div className="Page-Consultants"><Consultants /></div>
-          <div className="Page-Contact"><Contact /></div>
+          {/* <div className="Page-Contact"><Contact /></div> */}
           <div className="Page-Footer"><Footer /></div>
         </div>
         

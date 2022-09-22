@@ -20,7 +20,7 @@ function Consultants() {
   return (
     <main className={styles.mainContainer}>
       <div className={styles.headingContainer}>
-        <h2 className={styles.heading}>We wouldn't be One Source without our <span className={styles.dreamteam}>awesome dreamteam</span>!</h2>
+        <h2 className={styles.heading}>We wouldn&apos;t be One Source without our <span className={styles.dreamteam}>awesome dreamteam</span>!</h2>
       </div>
       <section className={styles.teamMemberContainer}>
       {consultants.map((person) => (

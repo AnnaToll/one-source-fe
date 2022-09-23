@@ -3,7 +3,11 @@ import './components.css';
 function Home() {
   return (
     <section className="home-container">
-      <h1>One source for your web and mobile development.</h1>
+      <div className='gradient-fs' />
+      <div className='home-text-container'>
+        <h1>Web and mobile development.</h1>
+        <h3>We do it all, from research, to design, development and maintance. Always striving for excellence.</h3>
+      </div>
     </section>
   );
 }

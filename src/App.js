@@ -11,6 +11,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+
 function App() {
   const [toggleHide, setToggleHide] = useState('hidden');
 
@@ -26,7 +27,8 @@ function App() {
         
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
         <Header handleClick={handleClick} user={user} setUser={setUser} />
-        
+      
+
         <div className="Page-wrapper"> 
           <div className="Page-Home"><Home /></div>
           <div className="Page-About"><About /></div>

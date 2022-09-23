@@ -41,7 +41,7 @@ function Login({ setCurrent, setUser, setToggleHide }) {
       <h2>Login</h2>
       { error ? <p className="error">{error}</p> : '' }
       { success ?  <p className="success">{success}</p> : '' }
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={handleSubmit}>
         <label>
           Email:
           <input

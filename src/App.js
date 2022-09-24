@@ -10,6 +10,7 @@ import Consultants from './components/Consultants';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ChatButton from './components/Chat/ChatButton';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <div className="Page-Consultants"><Consultants /></div>
           <div className="Page-Contact"><Contact /></div>
           <div className="Page-Footer"><Footer /></div>
+          <ChatButton />
         </div>
         
       </Router>

@@ -37,7 +37,7 @@ function App() {
           <div ref={el => navPages.current[2] = el} className="Page-Consultants"><Consultants /></div>
           <div ref={el => navPages.current[3] = el} className="Page-Contact"><Contact /></div>
           <div className="Page-Footer"><Footer /></div>
-          <ChatButton />
+          {/* <ChatButton /> */}
         </div>
         
       </Router>

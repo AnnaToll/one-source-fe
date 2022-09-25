@@ -27,8 +27,8 @@ function Consultants() {
         <div className={styles.teamMember} key={person.id}>
           <img src={`/IMG/${person.image}`} alt={person.name} className={styles.image} />
           <h3>{person.name}</h3>
-          <div><span className={styles.icons}><i className="bi bi-phone-fill"></i></span><i>{person.phone}</i></div>
-          <div><span className={styles.icons}><i className="bi bi-envelope-fill"></i></span><i>{person.email}</i></div>
+          <div><span className={styles.icons}><i className="bi bi-phone-fill"></i></span><span>{person.phone}</span></div>
+          <div><span className={styles.icons}><i className="bi bi-envelope-fill"></i></span><span>{person.email}</span></div>
           <p className={styles.skills}>frontend developer</p>
         </div>
       ))}

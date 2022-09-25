@@ -3,7 +3,7 @@
 .mainContainer {
     box-sizing: border-box;
     width: 100%;
-    padding: 100px;
+    padding: 50px 100px;
     background-color: white;
 }
 
@@ -17,7 +17,7 @@
 
 .heading {
     width: 100%;
-    font-size: 30px;
+    font-size: 35px;
     /* color: #EE6C4D; */
     /* color: #17A398; */
 }
@@ -32,9 +32,9 @@
         width: 100%;
         padding: 0 100px;
         display: flex;
-        gap: 50px 0;
+        gap: 50px 0px;
         flex-wrap: wrap;
-        justify-content:center;
+        justify-content: center;
         margin: 40px 0;
         /* margin: 50px 10px; */
         /* overflow: hidden; */
@@ -76,4 +76,59 @@
     /* color: #EE6C4D; */
     color: #17A398;
     font-weight:bold;
+}
+
+@media screen and (min-width: 1150px) and (max-width: 1310px) {
+    .teamMember {
+        min-width: 35%;
+    }
+
+    .teamMemberContainer {
+        /* justify-content: space-between; */
+        padding: 0 50px;
+    }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1149px) {
+    .teamMember {
+        min-width: 35%;
+    }
+
+    .teamMemberContainer {
+        /* justify-content: space-between; */
+        padding: 0 25px;
+    }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1049px) {
+    .teamMember {
+        min-width: 35%;
+    }
+
+    .teamMemberContainer {
+        /* justify-content: space-between; */
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width: 959px) {
+    .teamMember {
+        min-width: 50%;
+    }
+
+    .teamMemberContainer {
+        /* justify-content: space-between; */
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .teamMember {
+        min-width: 100%;
+    }
+
+    .teamMemberContainer {
+        /* justify-content: space-between; */
+        padding: 0px;
+    }
 }

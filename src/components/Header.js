@@ -1,6 +1,4 @@
-import { useCallback } from 'react';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useCallback } from 'react';
 import './components.css';
 
 function Header({ handleClick, user, setUser, navPages }) {
@@ -14,11 +12,11 @@ function Header({ handleClick, user, setUser, navPages }) {
   ]);
 
   const handleNavClick = (num) => {
-    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('scroll', handleScroll2);
     navPages.current[num].scrollIntoView({ behavior: 'smooth' });
     setClass(num);
     setTimeout(function(){
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll2);
     }, 1000);
   };
 
@@ -40,6 +38,11 @@ function Header({ handleClick, user, setUser, navPages }) {
       setHeaderClass('');
     }
 
+  }, []);
+
+  const handleScroll2 = useCallback(() => {
+    const current = window.pageYOffset + 1;
+
     if (navPages.current[0].offsetTop <= current && navPages.current[1].offsetTop > current)
       setClass(0);
     else if (navPages.current[1].offsetTop <= current && navPages.current[2].offsetTop > current)
@@ -54,9 +57,11 @@ function Header({ handleClick, user, setUser, navPages }) {
   useEffect(() => {
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll2);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll2);
     };
   }, []);
   

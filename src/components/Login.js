@@ -42,27 +42,31 @@ function Login({ setCurrent, setUser, setToggleHide }) {
       { error ? <p className="error">{error}</p> : '' }
       { success ?  <p className="success">{success}</p> : '' }
       <form onSubmit={handleSubmit}>
-        <label>
-          Email:
+        <div className='input-container'>
+          <i className="bi bi-envelope"></i>
+          <hr />
           <input
             type="text"
             name="email"
             value={loginDetails.email || ''}
+            placeholder='Email'
             onChange={(e) => setLoginDetails({ ...loginDetails, email: e.target.value })}
             required
           />
-        </label>
-        <label>
-          Password:
+        </div>
+        <div className='input-container'>
+          <i className="bi bi-lock"></i>
+          <hr />
           <input
             type="password"
             name="pwd"
             value={loginDetails.pwd || ''}
+            placeholder='Password'
             onChange={(e) => setLoginDetails({ ...loginDetails, pwd: e.target.value })}
             required
           />
-        </label>
-        <button type="submit">Sign in</button>
+        </div>
+        <button type="submit" className='button-orange'>Sign in</button>
       </form>
       <h5>
         Or

@@ -29,6 +29,7 @@ header  {
     color: white;
     z-index: 100;
     padding: 0 90px;
+    transition: height 0.1s ease-in;
 }
   
 nav span {
@@ -70,7 +71,7 @@ nav {
     border-radius: 10%;
     /* background-color: rgb(64, 216, 191); */
     /* background-color: rgb(238, 153, 84); */
-    background-color: #17A398;
+    background-color: var(--green);
     /* background-color: #ee884d; */
     color: #20424c;
     cursor: pointer;
@@ -78,7 +79,7 @@ nav {
 
 .active {
     position: relative;
-    top: 2px;
+    top: 3px;
     /* font-family: 'Graphik Regular', sans-serif; */
     color: #F38D68;
     border-bottom: 1px solid #F38D68;
@@ -92,6 +93,7 @@ nav {
     /* background-color: rgb(16, 23, 34); */
     /* background-color: #33312E; */
     justify-content: space-between;
+    transition: height 0.15s ease-in;
 }
 
 .scrolled-down .logo {
@@ -118,7 +120,7 @@ nav {
     /* color: #ababab;
     border-bottom: 1px solid #ababab; */
     padding-bottom: 1.5px;
-    top: 1.5px;
+    top: 3.5px;
 }
 
 /* Home component */
@@ -253,6 +255,28 @@ input[type=email]:focus {
     border: 3px solid #555;
   }
 /* Login/Register component */
+
+.button-orange {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13.7px;
+    padding: 0.6em 1.05em;
+    border-radius: 0.3em;
+    background-color: var(--sienna);
+    color: white;
+    cursor: pointer;
+    margin-top: 48px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.login-container h2 {
+    font-family: 'Graphik Medium', sans-serif;
+    margin-bottom: 60px;
+    color: var(--jet);
+    font-size: 29px;
+}
 .dark-fs {
     position: fixed;
     top: 0;
@@ -274,27 +298,74 @@ input[type=email]:focus {
 .login-container {
     position: relative;
     background-color: white;
-    width: 400px;
-    padding: 70px 50px;
+    width: 380px;
+    padding: 65px 60px;
     z-index: 200;
 }
-.login-container input {
-    display: block;
-    margin-bottom: 15px;
-    width: 100%;
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    margin-bottom: 30px;
+    padding-bottom: 6px;
 }
+
+.input-container .bi {
+    font-size: 18px;
+    color: rgb(164, 164, 164);
+}
+
+.input-container hr {
+    height: 18px;
+    border: 0;
+    border-left: 1px solid rgb(191, 191, 191);
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.login-container input {
+    width: 100%;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    /* border-bottom: 1px solid rgb(181, 181, 181); */
+    /* align-self: flex-end; */
+    /* padding: 5px 5px; */
+}
+.login-container input:focus {
+    outline: none;
+    border: none;
+}
+.login-container input::-webkit-input-placeholder {
+    color: rgb(202, 197, 197);
+    font-style: italic;
+    margin-left: 20px;
+}
+.login-container input::-moz-placeholder {
+    color: rgb(202, 197, 197);
+    font-style: italic;
+    margin-left: 20px;
+}
+
+
 .flex {
     display: flex;
 } 
 .hidden {
     display: none;
 }
-h5 {
+
+.login-container h5 {
     color: rgb(177, 177, 177);
-    margin-top: 20px;
+    margin-top: 17px;
+    font-weight: 500;
+    font-size: 14px;
+
 } 
 .strong {
-    color: #EE6C4D;
+    /* color: #15808c; */
+    /* color: var(--green); */
+    color: #16988d;
     cursor: pointer;
 }
 .error {

@@ -43,51 +43,59 @@ function Register({ setCurrent, setUser, setToggleHide }) {
       { error ? <p className="error">{error}</p> : '' }
       { success ? <p className="success">{success}</p> : '' }
       <form onSubmit={(e) => handleSubmit(e)}>
-        <label>
-          Name:
+        <div className='input-container'>
+          <i className="bi bi-person"></i>
+          <hr />
           <input
             type="text"
             name="name"
+            placeholder='Name'
             value={loginDetails.name || ''}
             onChange={(e) => setLoginDetails({ ...loginDetails, name: e.target.value })}
             required
           />
-        </label>
-        <label>
-          Email:
+        </div>
+        <div className='input-container'>
+          <i className="bi bi-envelope"></i>
+          <hr />
           <input
             type="text"
             name="email"
+            placeholder='Email'
             value={loginDetails.email || ''}
             onChange={(e) => setLoginDetails({ ...loginDetails, email: e.target.value })}
             required
           />
-        </label>
-        <label>
-          Phone:
+        </div>
+        <div className='input-container'>
+          <i className="bi bi-phone"></i>
+          <hr />
           <input
             type="text"
             name="phone"
+            placeholder='Phone'
             value={loginDetails.phone || ''}
             onChange={(e) => setLoginDetails({ ...loginDetails, phone: e.target.value })}
             required
           />
-        </label>
-        <label>
-          Password:
+        </div>
+        <div className='input-container'>
+          <i className="bi bi-lock"></i>
+          <hr />
           <input
             type="password"
             name="pwd"
+            placeholder='Password'
             value={loginDetails.pwd || ''}
             onChange={(e) => setLoginDetails({ ...loginDetails, pwd: e.target.value })}
             required
           />
-        </label>
-        <button type="submit">Register</button>
+        </div>
+        <button type="submit" className='button-orange'>Register</button>
       </form>
       <h5>
         Or
-        <span className="strong" onClick={() => setCurrent('login')}>login</span>
+        <span className="strong" onClick={() => setCurrent('login')}> login</span>
       </h5>
     </>
   );

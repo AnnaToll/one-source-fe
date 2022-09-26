@@ -12,7 +12,7 @@ function Contact() {
   };
   return (
     <section className='contact-container'>
-      
+      <div className='inner-container'>
         <h1>Contact</h1>
 
         <div className='adress'>
@@ -25,10 +25,11 @@ function Contact() {
         <form className='contactForm' onSubmit={handleSubmit}>
           <input placeholder='Name' type='text' onChange={ (e) => setName(e.target.value)} value={name}/>
           <input placeholder='Email' type='email'onChange={ (e) => setEmail(e.target.value)} value={email}/>
-          <input placeholder='Enter message here' size="50" type='text' onChange={ (e) => setMessage(e.target.value)} value={message}/>
+          <textarea placeholder='Enter message here' rows="5" cols="40" type='text' onChange={ (e) => setMessage(e.target.value)} value={message}/>
+          
           <button>Send</button>
         </form>
-
+        </div>
     </section>
   );
 }

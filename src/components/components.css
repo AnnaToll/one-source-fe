@@ -208,6 +208,7 @@ nav {
 /* Contact component */
 .contact-container {
     background-image: url("/src/img/contact2.jpg");
+    background-size: cover;
     position: relative;
     /* width: 100%; */
     align-items: center;

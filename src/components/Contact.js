@@ -1,15 +1,47 @@
 import './components.css';
 import { useState } from 'react';
+import DiscordService from '../services/DiscordService';
 
 
 function Contact() {
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    postToDiscord();
   };
+
+  const [formData, setFormData] = useState({
+    data: {
+      name: '',
+      email: '',
+      message: ''
+    },
+    error: {},
+  });
+
+  const setDynamicFormData = (name, value) => {
+    setFormData({
+      data: {
+        ...formData.data,
+        [name]: value,
+      },
+      error: {},
+    });
+  };
+
+  const {Send} = DiscordService();
+
+  const postToDiscord = () => {
+    const description = Object.entries(formData.data)
+    .map((d) => `${d[0]} : ${d[1]}`).join('\n');
+    
+    Send(description);
+  };
+
   return (
     <section className='contact-container'>
       <div className='inner-container'>
@@ -23,9 +55,23 @@ function Contact() {
         </div>
         
         <form className='contactForm' onSubmit={handleSubmit}>
-          <input placeholder='Name' type='text' onChange={ (e) => setName(e.target.value)} value={name}/>
-          <input placeholder='Email' type='email'onChange={ (e) => setEmail(e.target.value)} value={email}/>
-          <textarea placeholder='Enter message here' rows="5" cols="40" type='text' onChange={ (e) => setMessage(e.target.value)} value={message}/>
+          <input placeholder='Name' name='name' type='text' 
+            onChange={(e) => {
+            const {name, value} = e.target;
+            setDynamicFormData(name, value);
+          }} />
+
+          <input placeholder='Email' name='email' type='email' 
+            onChange={(e) => {
+            const {name, value} = e.target;
+            setDynamicFormData(name, value);
+          }} />
+
+          <textarea placeholder='Enter message here' name='message' rows="5" cols="40" type='text' 
+          onChange={(e) => {
+            const {name, value} = e.target;
+            setDynamicFormData(name, value);
+          }} />
           
           <button>Send</button>
         </form>

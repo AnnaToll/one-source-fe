@@ -48,7 +48,7 @@ function Contact() {
         <h1>Contact</h1>
 
         <div className='adress'>
-        <p>Adress:</p>
+        <p>Address:</p>
         <p>One Sourcevägen 1</p>
         <p>111 11 Stockholm</p>
         <p>Phone: +4611-111 111</p>

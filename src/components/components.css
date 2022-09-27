@@ -183,9 +183,10 @@ nav {
     bottom: 30px;
     right: 30px;
     background-color: var(--sienna);
-    height: 40px;
-    width: 40px;
+    /* height: 40px;
+    width: 40px; */
     z-index: 70;
+    color: white;
 }
 
 /* About component */

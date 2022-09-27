@@ -7,11 +7,9 @@ function About() {
         <h1 className='about-title'>About us!</h1>
         
         <h3 className='about-desc'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget maximus nisi. Donec aliquam leo at nulla ornare interdum. 
-        Vivamus sit amet est fermentum, finibus sem a, maximus orci. Praesent orci mauris, lacinia quis dignissim ut, vehicula vel nulla. 
-        Vestibulum sagittis faucibus ipsum sit amet mattis. Vestibulum sed orci libero. Duis felis tellus, feugiat nec turpis sed, 
-        sollicitudin posuere libero. Aenean id justo lorem. Integer erat erat, porta ut dolor id, iaculis maximus justo. 
-        Cras sollicitudin leo ut nisi suscipit pretium. 
+        Over the years, we have seen and used several web and mobile applications and wondered why design and more user-friendly. We put our heads togheter the third term of studies and put this project together. <br></br>
+        One Source - Everything from research to the finished product in your hands. Our love for Web and mobile development makes it easier for you to get your dream come through, we can help you with design, mockup, backend, frontend, Api and testing.<br></br>
+        Tell us your dream and we will make it a reality.
         </h3>
 
     </section>

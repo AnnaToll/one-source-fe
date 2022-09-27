@@ -183,20 +183,21 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .about-title{
     text-align: center;
     margin-left: 100px;
     margin-top: 50px;
-    color: black;
-    font-size: 5rem;
-    font-weight: 600;
+    color: var(--green);
+    font-size: 5.5rem;
+    font-weight: 700;
 }
 
 .about-desc {
+    text-align: left;
     margin-top: 50px;
     margin-left: 150px;
     margin-right: 100px;

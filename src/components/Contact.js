@@ -2,8 +2,6 @@ import './components.css';
 import { useState } from 'react';
 import DiscordService from '../services/DiscordService';
 
-const a = 1;
-
 function Contact() {
 
   const [name, setName] = useState('');

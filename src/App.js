@@ -11,6 +11,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ChatButton from './components/Chat/ChatButton';
+import Test from './components/Test';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
         <Header handleClick={handleClick} user={user} setUser={setUser} navPages={navPages} />
+        <Test />
       
 
         <div className="Page-wrapper"> 

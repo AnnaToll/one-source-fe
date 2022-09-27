@@ -160,19 +160,32 @@ nav {
 
 .home-text-container {
     position: relative;
+    /* top: 47px; */
     top: 40px;
     max-width: 600px;
 }
 
 .home-container h1 {
-    font-family: 'Graphik Bold', sans-serif;
-    font-size: 70px;
+    /* font-family: 'Graphik Bold', sans-serif;
+    font-size: 70px; */
+    font-family: 'Graphik Semibold', sans-serif;
+    font-size: 84px;
     margin-bottom: 11px;
 }
 
 .home-container h3 {
     /* font-family: 'Graphik Regular', sans-serif; */
     font-weight: 600;
+}
+
+.test {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--sienna);
+    height: 40px;
+    width: 40px;
+    z-index: 70;
 }
 
 /* About component */
@@ -283,6 +296,7 @@ input[type=email]:focus {
 }
 
 .login-container h2 {
+    position: relative;
     font-family: 'Graphik Medium', sans-serif;
     margin-bottom: 60px;
     color: var(--jet);
@@ -310,7 +324,7 @@ input[type=email]:focus {
     position: relative;
     background-color: white;
     width: 380px;
-    padding: 65px 60px;
+    padding: 60px 65px;
     z-index: 200;
 }
 
@@ -379,9 +393,16 @@ input[type=email]:focus {
     color: #16988d;
     cursor: pointer;
 }
+
+.login-container h2 p {
+    position: absolute;
+    top: 46px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+}
 .error {
-    color: red;
-    font-weight: bold;
+    font-weight: 700;
+    color: rgb(230, 0, 0);
 } 
 .success {
     color: rgb(91, 210, 0);

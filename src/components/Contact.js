@@ -12,6 +12,7 @@ function Contact() {
     e.preventDefault();
     postToDiscord();
   };
+const a = 2;
 
   const [formData, setFormData] = useState({
     data: {

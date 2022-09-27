@@ -7,7 +7,6 @@ function DiscordService( ) {
         const body = {
           content: 'Message Recieved',
           tts: false,
-          color: 'white',
           embeds: [
             {
                 title: 'Contact Message',

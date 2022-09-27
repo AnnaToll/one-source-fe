@@ -2,7 +2,6 @@ import './components.css';
 import { useState } from 'react';
 import DiscordService from '../services/DiscordService';
 
-
 function Contact() {
 
   const [name, setName] = useState('');
@@ -13,6 +12,7 @@ function Contact() {
     e.preventDefault();
     postToDiscord();
   };
+const a = 2;
 
   const [formData, setFormData] = useState({
     data: {

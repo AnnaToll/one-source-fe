@@ -1,0 +1,12 @@
+.Chat-Button {
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+    background-color: #17a398;
+    z-index: 80;
+    color: white;
+}
+
+.Chatbot {
+    background-color: #17a398;
+}

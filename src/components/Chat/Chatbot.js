@@ -17,7 +17,7 @@ const theme = {
   botAvatar: 'bubba.jpg'
 };
 
-class App extends Component {
+class Chatbot extends Component {
   render() {
     const steps = [
       {
@@ -78,7 +78,7 @@ class App extends Component {
     ];
 
     return (
-      <div className="App">
+      <div className='Chatbot'>
         <ThemeProvider theme={theme}>
           <ChatBot
             headerTitle={'One Source Support'}
@@ -93,4 +93,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Chatbot;

@@ -5,16 +5,16 @@ import { ThemeProvider } from 'styled-components';
 
 //Styles
 const theme = {
-  background: '#17a398',
+  background: '#fff',
   fontFamily: 'Helvetica Neue',
   headerBgColor: '#17A398',
   headerFontColor: '#fff',
   headerFontSize: '15px',
   botBubbleColor: '#17A398',
   botFontColor: '#fff',
-  userBubbleColor: '#fff',
-  userFontColor: '#F38D68',
-  botAvatar: 'bubba.jpg'
+  userBubbleColor: '#3A51B7',
+  userFontColor: '#fff',
+  botAvatar: 'botty.jpg'
 };
 
 class App extends Component {

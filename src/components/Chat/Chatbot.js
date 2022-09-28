@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 //Styles
 const theme = {
-  background: '#f5f8fb',
+  background: '#17a398',
   fontFamily: 'Helvetica Neue',
   headerBgColor: '#17A398',
   headerFontColor: '#fff',
@@ -78,13 +78,13 @@ class App extends Component {
     ];
 
     return (
-      <div className="App">
+      <div className='App'>
         <ThemeProvider theme={theme}>
           <ChatBot
             headerTitle={'One Source Support'}
             placeholder={'Write here'}
             recognitionEnable={true}
-            botDelay={2000}
+            botDelay={1000}
             steps={steps}
           />
         </ThemeProvider>

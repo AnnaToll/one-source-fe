@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 //Styles
 const theme = {
-  background: '#f5f8fb',
+  background: '#17a398',
   fontFamily: 'Helvetica Neue',
   headerBgColor: '#17A398',
   headerFontColor: '#fff',
@@ -17,7 +17,7 @@ const theme = {
   botAvatar: 'bubba.jpg'
 };
 
-class Chatbot extends Component {
+class App extends Component {
   render() {
     const steps = [
       {
@@ -78,13 +78,13 @@ class Chatbot extends Component {
     ];
 
     return (
-      <div className='Chatbot'>
+      <div className='App'>
         <ThemeProvider theme={theme}>
           <ChatBot
             headerTitle={'One Source Support'}
             placeholder={'Write here'}
             recognitionEnable={true}
-            botDelay={2000}
+            botDelay={1000}
             steps={steps}
           />
         </ThemeProvider>
@@ -93,4 +93,4 @@ class Chatbot extends Component {
   }
 }
 
-export default Chatbot;
+export default App;

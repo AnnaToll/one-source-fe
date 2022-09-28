@@ -5,6 +5,7 @@
     background-color: #17a398;
     z-index: 80;
     color: white;
+    cursor: pointer;
 }
 
 .Chatbot {

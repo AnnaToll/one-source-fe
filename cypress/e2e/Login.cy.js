@@ -14,8 +14,8 @@ describe('Testing Login', () => {
     cy.get('.login-container [type=submit]')
       .click()
     
-    cy.get('.login-container .success')
-    .should('exist', {timeout:50000})
+    cy.get('.login-container .success', {timeout:50000})
+    .should('exist')
 
     cy.get('nav')
       .children()

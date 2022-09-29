@@ -5,16 +5,16 @@ import { ThemeProvider } from 'styled-components';
 
 //Styles
 const theme = {
-  background: '#f5f8fb',
+  background: '#fff',
   fontFamily: 'Helvetica Neue',
   headerBgColor: '#17A398',
   headerFontColor: '#fff',
   headerFontSize: '15px',
   botBubbleColor: '#17A398',
   botFontColor: '#fff',
-  userBubbleColor: '#fff',
-  userFontColor: '#F38D68',
-  botAvatar: 'bubba.jpg'
+  userBubbleColor: '#3A51B7',
+  userFontColor: '#fff',
+  botAvatar: 'botty.jpg'
 };
 
 class App extends Component {
@@ -78,13 +78,13 @@ class App extends Component {
     ];
 
     return (
-      <div className="App">
+      <div className='App'>
         <ThemeProvider theme={theme}>
           <ChatBot
             headerTitle={'One Source Support'}
             placeholder={'Write here'}
             recognitionEnable={true}
-            botDelay={2000}
+            botDelay={1000}
             steps={steps}
           />
         </ThemeProvider>

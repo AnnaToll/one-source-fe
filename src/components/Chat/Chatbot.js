@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 //Styles
 const theme = {
   background: '#fff',
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Graphik Light',
   headerBgColor: '#17A398',
   headerFontColor: '#fff',
   headerFontSize: '15px',
@@ -14,7 +14,7 @@ const theme = {
   botFontColor: '#fff',
   userBubbleColor: '#3A51B7',
   userFontColor: '#fff',
-  botAvatar: 'botty.jpg'
+  botAvatar: 'bot.jpg'
 };
 
 class App extends Component {

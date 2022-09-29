@@ -238,13 +238,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-<<<<<<< HEAD
-    background-color:rgba(0, 0, 0, 0.5);
-    width: 90%;
-=======
     background-color: rgba(0, 0, 0, 0.6);
-    width: 85%;
->>>>>>> 6dfd1cd26c521ded8b37bd3e970842398e87b07c
+    width: 90%;
     margin: auto;
 }
 

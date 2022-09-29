@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DiscordService from '../services/DiscordService';
 
 function Contact() {
-  
+  let a = 1;
   const [formData, setFormData] = useState({
     data: {
       name: '',

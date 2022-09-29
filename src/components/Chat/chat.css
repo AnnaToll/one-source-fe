@@ -2,10 +2,30 @@
     position: fixed;
     bottom: 45px;
     right: 45px;
-    background-color: #17a398;
     z-index: 80;
     color: white;
     cursor: pointer;
+}
+
+.Chat-Icons {
+    display: flex;
+    cursor: pointer;
+}
+
+.Icon-close {
+    font-size: 38px;
+}
+
+.Icon-chat {
+    font-size: 50px;
+    height: 62px;
+    width: 62px;
+    padding: 2px;
+    border-radius: 30px;
+    background-color: #17a398;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .Chatbot {

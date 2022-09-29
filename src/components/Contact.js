@@ -3,17 +3,7 @@ import { useState } from 'react';
 import DiscordService from '../services/DiscordService';
 
 function Contact() {
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    postToDiscord();
-  };
-const a = 2;
-
+  let a = 1;
   const [formData, setFormData] = useState({
     data: {
       name: '',
@@ -22,6 +12,19 @@ const a = 2;
     },
     error: {},
   });
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postToDiscord();
+    setFormData({
+      data: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      error: {},
+    });
+  };
 
   const setDynamicFormData = (name, value) => {
     setFormData({
@@ -38,8 +41,8 @@ const a = 2;
   const postToDiscord = () => {
     const description = Object.entries(formData.data)
     .map((d) => `${d[0]} : ${d[1]}`).join('\n');
-    
     Send(description);
+
   };
 
   return (
@@ -51,23 +54,23 @@ const a = 2;
         <p>Address:</p>
         <p>One Sourcevägen 1</p>
         <p>111 11 Stockholm</p>
-        <p>Phone: +4611-111 111</p>
+        <p>Phone: +4611-111 11 11</p>
         </div>
         
         <form className='contactForm' onSubmit={handleSubmit}>
-          <input placeholder='Name' name='name' type='text' 
+          <input placeholder='Name' value={formData.data.name} name='name' type='text' 
             onChange={(e) => {
             const {name, value} = e.target;
             setDynamicFormData(name, value);
           }} />
 
-          <input placeholder='Email' name='email' type='email' 
+          <input placeholder='Email' value={formData.data.email} name='email' type='email' 
             onChange={(e) => {
             const {name, value} = e.target;
             setDynamicFormData(name, value);
           }} />
 
-          <textarea placeholder='Enter message here' name='message' rows="5" cols="40" type='text' 
+          <textarea placeholder='Enter message here' value={formData.data.message} name='message' rows="5" cols="40" type='text' 
           onChange={(e) => {
             const {name, value} = e.target;
             setDynamicFormData(name, value);

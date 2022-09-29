@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Chatbot from './Chatbot';
 
 import './chat.css';
+import { AiOutlineCloseCircle, AiOutlineSmile } from 'react-icons/ai';
 
 const ChatButton = () => {
     const [show, setShow] = useState(false);
@@ -10,12 +11,12 @@ const ChatButton = () => {
             {
                 show?<Chatbot setShow={setShow}/>:null
             }
-            <div >
+            <div className='Chat-Icons'>
                 {
                     show === true ? 
-                <p onClick={ () =>setShow(!show)}>Close</p>
+                <p className='Icon-close' onClick={ () =>setShow(!show)}><AiOutlineCloseCircle /></p>
                 : 
-                <p onClick={ () =>setShow(!show)}>Hello! Need help?</p>
+                <p className='Icon-chat' onClick={ () =>setShow(!show)}><AiOutlineSmile /></p>
                 }
                 
             </div>

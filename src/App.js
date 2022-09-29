@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
-import {  BrowserRouter as Router,} from 'react-router-dom';
+import { BrowserRouter as Router, } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './components/Home';
 import LoginContainer from './components/LoginContainer';
-import Consultants from './components/Consultants';
+import TheTeam from './components/TheTeam';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -56,18 +56,18 @@ function App() {
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setLoggedIn={setLoggedIn} />
         <Header handleClick={handleClick} loggedIn={loggedIn} setLoggedIn={setLoggedIn} navPages={navPages} />
         {/*<Test />*/}
-        {/* <ChatButton /> */}
+        <ChatButton />
 
-        <div className="Page-wrapper"> 
+        <div className="Page-wrapper">
           <div ref={el => navPages.current[0] = el} className="Page-Home"><Home /></div>
           <button onClick={ handleClickDeleteCookies } >Clear all Cookies</button>
           <div ref={el => navPages.current[1] = el} className="Page-About"><About /></div>
-          <div ref={el => navPages.current[2] = el} className="Page-Consultants"><Consultants /></div>
+          <div ref={el => navPages.current[2] = el} className="Page-TheTeam"><TheTeam /></div>
           <div ref={el => navPages.current[3] = el} className="Page-Contact"><Contact /></div>
           <div className="Page-Footer"><Footer /></div>
 
         </div>
-        
+
       </Router>
     </div>
   );

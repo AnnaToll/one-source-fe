@@ -2,7 +2,6 @@
     position: fixed;
     bottom: 45px;
     right: 45px;
-    background-color: #17a398;
     z-index: 80;
     color: white;
     cursor: pointer;
@@ -10,28 +9,23 @@
 
 .Chat-Icons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 4px;
-    padding: 10px;
-    height: 60px;
-    width: 60px;
-    font-size: 38px;
     cursor: pointer;
 }
 
-.Chat-Icons-Close {
-    display: flex;
+.Icon-close {
+    font-size: 38px;
+}
+
+.Icon-chat {
+    font-size: 50px;
+    height: 62px;
+    width: 62px;
+    padding: 2px;
+    border-radius: 30px;
+    background-color: #17a398;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 4px;
-    padding: 40px;
-    height: 40px;
-    width: 40px;
-    font-size: 38px;
-    cursor: pointer;
 }
 
 .Chatbot {

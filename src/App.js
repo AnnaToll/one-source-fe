@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 import './App.css';
-import {  BrowserRouter as Router,} from 'react-router-dom';
+import { BrowserRouter as Router, } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './components/Home';
 import LoginContainer from './components/LoginContainer';
-import Consultants from './components/Consultants';
+import TheTeam from './components/TheTeam';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -27,21 +27,21 @@ function App() {
   return (
     <div className="App">
       <Router>
-        
+
         <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setUser={setUser} />
         <Header handleClick={handleClick} user={user} setUser={setUser} navPages={navPages} />
         <Test />
-      
 
-        <div className="Page-wrapper"> 
+
+        <div className="Page-wrapper">
           <div ref={el => navPages.current[0] = el} className="Page-Home"><Home /></div>
           <div ref={el => navPages.current[1] = el} className="Page-About"><About /></div>
-          <div ref={el => navPages.current[2] = el} className="Page-Consultants"><Consultants /></div>
+          <div ref={el => navPages.current[2] = el} className="Page-TheTeam"><TheTeam /></div>
           <div ref={el => navPages.current[3] = el} className="Page-Contact"><Contact /></div>
           <div className="Page-Footer"><Footer /></div>
           {/* <ChatButton /> */}
         </div>
-        
+
       </Router>
     </div>
   );

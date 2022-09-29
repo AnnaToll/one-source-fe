@@ -1,15 +1,26 @@
 import { useState, useEffect, useCallback } from 'react';
 import './components.css';
+import jwt_decode from 'jwt-decode';
 
-function Header({ handleClick, user, setUser, navPages }) {
+function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
 
   const [headerClass, setHeaderClass] = useState('');
+  const [name, setName] = useState('');
   const [linkClass, setLinkClass] = useState([
     'active',
     '',
     '',
     ''
   ]);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('accessToken')) {
+      let user = jwt_decode(sessionStorage.getItem('accessToken'));
+      setName(user.name);
+    }
+
+
+  }, [loggedIn]);
 
   const handleNavClick = (num) => {
     window.removeEventListener('scroll', handleScroll2);
@@ -64,6 +75,12 @@ function Header({ handleClick, user, setUser, navPages }) {
       window.removeEventListener('scroll', handleScroll2);
     };
   }, []);
+
+  const handleClickLogout = async () => {
+    setLoggedIn(false);
+    sessionStorage.removeItem('accessToken');
+    await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/logout`, { credentials: 'include' });
+  };
   
   return (
     <header className={headerClass}>
@@ -78,9 +95,9 @@ function Header({ handleClick, user, setUser, navPages }) {
         <span onClick={() => handleNavClick(2)} className={ linkClass[2] } >The team</span>
         <span onClick={() => handleNavClick(3)} className={ linkClass[3] } >Contact</span>
         {
-          user
+          loggedIn
           ? 
-            <div>Hi {user.name}!  |  <span onClick={() => setUser(null)}>Logout</span></div>
+            <div>Hi {name}!  |  <span onClick={handleClickLogout}>Logout</span></div>
           : 
             <div className="login-icon-container" onClick={handleClick}>
               <i className="bi bi-person-circle" />

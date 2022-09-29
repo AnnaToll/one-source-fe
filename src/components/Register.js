@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './components.css';
 
-function Register({ setCurrent, setUser, setToggleHide }) {
+function Register({ setCurrent, setLoggedIn, setToggleHide }) {
   const [loginDetails, setLoginDetails] = useState({});
 
   const [error, setError] = useState('');
@@ -20,7 +20,7 @@ function Register({ setCurrent, setUser, setToggleHide }) {
       const data = await response.json();
       if (response.status === 200) {
         setError('');
-        setUser(data);
+        setLoggedIn(true);
         setLoginDetails({});
         setSuccess(`Welcome ${data.name}! You are now logged in.`);
         setTimeout(() => {

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './components.css';
+import jwt_decode from 'jwt-decode';
 
-function Login({ setCurrent, setUser, setToggleHide }) {
+function Login({ setCurrent, setLoggedIn, setToggleHide }) {
   const [loginDetails, setLoginDetails] = useState({});
 
   const [error, setError] = useState('');
@@ -11,6 +12,7 @@ function Login({ setCurrent, setUser, setToggleHide }) {
     e.preventDefault();
     const settings = {
       method: 'POST',
+      credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginDetails),
     };
@@ -19,9 +21,11 @@ function Login({ setCurrent, setUser, setToggleHide }) {
       const data = await response.json();
       if (response.status === 200) {
         setError('');
-        setUser(data);
+        sessionStorage.setItem('accessToken', data.accessToken);
+        const user = jwt_decode(data.accessToken);
+        setSuccess(`Welcome ${user.name}! You are logged in.`);
+        setLoggedIn(true);
         setLoginDetails({});
-        setSuccess(`Welcome ${data.name}! You are logged in.`);
         setTimeout(() => {
           setToggleHide('hidden');
           setSuccess('');
@@ -33,6 +37,9 @@ function Login({ setCurrent, setUser, setToggleHide }) {
       }
     } catch (error) {
       setError('Oops, something went wrong! Please try again or contact us for more information.');
+      await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/deleteCookies`);
+      sessionStorage.removeItem('accessToken');
+
     }
   };
 

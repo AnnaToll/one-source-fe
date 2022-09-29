@@ -4,7 +4,7 @@ import Register from './Register';
 import './components.css';
 
 function LoginContainer({
-  toggleHide, setToggleHide, handleClick, setUser,
+  toggleHide, setToggleHide, handleClick, setLoggedIn,
 }) {
   const [current, setCurrent] = useState('login');
 
@@ -14,8 +14,8 @@ function LoginContainer({
       <section className="login-container">
         {
           current === 'login'
-          ? <Login setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
-          : <Register setCurrent={setCurrent} setUser={setUser} setToggleHide={setToggleHide} />
+          ? <Login setCurrent={setCurrent} setLoggedIn={setLoggedIn} setToggleHide={setToggleHide} />
+          : <Register setCurrent={setCurrent} setLoggedIn={setLoggedIn} setToggleHide={setToggleHide} />
         }
       </section>
     </div>

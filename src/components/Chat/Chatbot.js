@@ -40,27 +40,27 @@ class App extends Component {
         options: [
           { value: 1, label: 'About us?', trigger: 'about' },
           { value: 2, label: 'Who are we?', trigger: 'team' },
-          { value: 3, label: 'Contact information?', trigger: 'contact' }
+          { value: 3, label: 'School?', trigger: 'school' }
         ]
       },
       {
         id: 'about',
-        message: 'This is One Source...',
+        message: 'One Source is a school project, an application that combines a Backend with a Frontend, a project from an idea to a finished product',
         trigger: 4
       },
       {
         id: 'team',
-        message: 'Hello from Anna, Johanna, Nilla och Isabelle',
+        message: 'Our team consists of four students: Anna, Johanna, Pernilla och Isabelle.',
         trigger: 4
       },
       {
-        id: 'contact',
-        message: 'Phone number',
+        id: 'school',
+        message: 'We are student at Jensen Education in Stockholm, Sweden and we are studying Frontend development',
         trigger: 4
       },
       {
         id: '4',
-        message: 'Need more help?',
+        message: 'Want more help?',
         trigger: 5
       },
       {

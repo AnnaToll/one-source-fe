@@ -11,7 +11,7 @@ const ChatButton = () => {
             {
                 show?<Chatbot setShow={setShow}/>:null
             }
-            <div >
+            <div className='Chat-Icons'>
                 {
                     show === true ? 
                 <p onClick={ () =>setShow(!show)}><AiOutlineCloseCircle /></p>

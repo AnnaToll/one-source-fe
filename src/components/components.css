@@ -278,6 +278,9 @@ nav {
     font-family: 'Graphik Regular', sans-serif;
     font-size: 15px;
 }
+input[type=email] {
+    width: 280px;
+}
 
 .contactForm button {
     width: 80px;

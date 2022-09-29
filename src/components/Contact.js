@@ -54,7 +54,7 @@ function Contact() {
         <p>Address:</p>
         <p>One Sourcevägen 1</p>
         <p>111 11 Stockholm</p>
-        <p>Phone: +4611-111 111</p>
+        <p>Phone: +4611-111 11 11</p>
         </div>
         
         <form className='contactForm' onSubmit={handleSubmit}>

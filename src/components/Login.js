@@ -22,6 +22,11 @@ function Login({ setCurrent, setLoggedIn, setToggleHide }) {
       if (response.status === 200) {
         setError('');
         sessionStorage.setItem('accessToken', data.accessToken);
+        // if (localStorage.getItem('expiration')) {
+        //   localStorage.removeItem('expiration');
+        // }
+        // const expiration = Date.now() + (12 * 60 * 60 * 1000);
+        // localStorage.setItem('expiration', expiration);
         const user = jwt_decode(data.accessToken);
         setSuccess(`Welcome ${user.name}! You are logged in.`);
         setLoggedIn(true);

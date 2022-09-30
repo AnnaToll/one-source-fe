@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 
 import Header from './components/Header';
 import Home from './components/Home';
@@ -34,6 +35,16 @@ function App() {
   // };
   
   useEffect(() => {
+    // if (loggedIn === true) {
+    //   if (sessionStorage.getItem('accessToken')) {
+    //     const token = jwt_decode(sessionStorage.getItem('accessToken'));
+    //     if (Date.now() >= token.exp * 1000) {
+    //       getNewToken();
+    //     } 
+    //   } else {
+    //     getNewToken();
+    //   }
+    // }
     if (sessionStorage.getItem('accessToken')) {
       setLoggedIn(true);
     } 
@@ -60,7 +71,7 @@ function App() {
 
         <div className="Page-wrapper">
           <div ref={el => navPages.current[0] = el} className="Page-Home"><Home /></div>
-          <button onClick={ handleClickDeleteCookies } >Clear all Cookies</button>
+          {/* <button onClick={ handleClickDeleteCookies } >Clear all Cookies</button> */}
           <div ref={el => navPages.current[1] = el} className="Page-About"><About /></div>
           <div ref={el => navPages.current[2] = el} className="Page-TheTeam"><TheTeam /></div>
           <div ref={el => navPages.current[3] = el} className="Page-Contact"><Contact /></div>

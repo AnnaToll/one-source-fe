@@ -15,7 +15,7 @@ function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
 
   useEffect(() => {
     if (sessionStorage.getItem('accessToken')) {
-      let user = jwt_decode(sessionStorage.getItem('accessToken'));
+      const user = jwt_decode(sessionStorage.getItem('accessToken'));
       setName(user.name);
     }
 
@@ -79,6 +79,7 @@ function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
   const handleClickLogout = async () => {
     setLoggedIn(false);
     sessionStorage.removeItem('accessToken');
+    localStorage.removeItem('expiration');
     await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/logout`, { credentials: 'include' });
   };
   

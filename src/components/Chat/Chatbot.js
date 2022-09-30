@@ -10,9 +10,9 @@ const theme = {
   headerBgColor: '#17A398',
   headerFontColor: '#fff',
   headerFontSize: '15px',
-  botBubbleColor: '#17A398',
+  botBubbleColor: '#E1987E',
   botFontColor: '#fff',
-  userBubbleColor: '#3A51B7',
+  userBubbleColor: '#17A398',
   userFontColor: '#fff',
   botAvatar: 'bot.jpg'
 };
@@ -60,7 +60,7 @@ class App extends Component {
       },
       {
         id: '4',
-        message: 'Want more help?',
+        message: 'Want more info?',
         trigger: 5
       },
       {
@@ -68,13 +68,19 @@ class App extends Component {
         options: [
           { value: 1, label: 'Yes', trigger: '3' },
           { value: 2, label: 'No', trigger: '6' },
+          { value: 3, label: 'Yes but with a human', trigger: '7' },
         ]
       },
       {
         id: '6',
         message: 'Have a nice day!',
         end: true
-      }
+      },
+      {
+        id: '7',
+        message: 'I will fetch a real human for you !',
+        end: true,
+      },
     ];
 
     return (

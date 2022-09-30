@@ -25,7 +25,7 @@ function TheTeam() {
       <div className={styles.headingContainer}>
         {/* <h2 className={styles.heading2}>The <br /><span className={styles.dreamteam} >One Source</span> <br /> Team!</h2> */}
         <h2 className={styles.heading2}>We wouldn&apos;t be One Source without our <span className={styles.dreamteam}>awesome dreamteam</span>!</h2>
-        <img src="/IMG/—Pngtree—arc arrow vector diagram_5054191.png" alt="arrow" className={styles.arrow} />
+        <img src="/IMG/—Pngtree—arc arrow vector diagram_5054191_2.png" alt="arrow" className={styles.arrow} />
         {/* <div><p><i className="arrow right"></i></p></div> */}
       </div>
       <section className={styles.teamMemberContainer}>

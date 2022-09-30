@@ -10,24 +10,27 @@
 .Chat-Icons {
     display: flex;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .Icon-close {
     font-size: 38px;
+    color: #17a398;
 }
 
 .Icon-chat {
     font-size: 50px;
     height: 62px;
     width: 62px;
-    padding: 2px;
     border-radius: 30px;
-    background-color: #17a398;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    color: #fff;
+    background-color:  hsla(175, 86%, 36%, 0.7);
+
 }
 
 .Chatbot {
     background-color: #17a398;
 }
+

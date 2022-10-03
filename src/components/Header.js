@@ -1,9 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './components.css';
 import jwt_decode from 'jwt-decode';
 
 function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
 
+  const navigate = useNavigate();
+  const location = useLocation();
   const [headerClass, setHeaderClass] = useState('');
   const [name, setName] = useState('');
   const [linkClass, setLinkClass] = useState([
@@ -23,6 +26,10 @@ function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
   }, [loggedIn]);
 
   const handleNavClick = (num) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      // return;
+    }
     window.removeEventListener('scroll', handleScroll2);
     navPages.current[num].scrollIntoView({ behavior: 'smooth' });
     setClass(num);
@@ -66,21 +73,20 @@ function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
   }, []);
   
   useEffect(() => {
+    if (location.pathname === '/') {
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll2);
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('scroll', handleScroll2);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', handleScroll2);
+      };
+    }
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('scroll', handleScroll2);
-    };
   }, []);
 
-  const handleClickLogout = async () => {
-    setLoggedIn(false);
-    sessionStorage.removeItem('accessToken');
-    localStorage.removeItem('expiration');
-    await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/logout`, { credentials: 'include' });
+  const handleClickNavigate = () => {
+    navigate('/admin');
   };
   
   return (
@@ -98,10 +104,20 @@ function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
         {
           loggedIn
           ? 
-            <div>Hi {name}!  |  <span onClick={handleClickLogout}>Logout</span></div>
+            <>
+              {/* <span>{name} <i className="bi bi-caret-down-fill" /></span> */}
+              <div className="login-icon-container" onClick={handleClickNavigate}>
+                {name}
+                {/* <i className="bi bi-lock-fill" /> */}
+                <i className="bi bi-caret-down-fill" />
+                {/* <i className="bi bi-person-circle" /> */}
+              </div>
+            </>
+            // <div>Hi {name}!  |  <span onClick={handleClickLogout}>Logout</span></div>
           : 
             <div className="login-icon-container" onClick={handleClick}>
-              <i className="bi bi-person-circle" />
+              <i className="bi bi-lock-fill" />
+              {/* <i className="bi bi-person-circle" /> */}
             </div>
           }
       </nav>

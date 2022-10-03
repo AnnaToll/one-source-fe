@@ -100,7 +100,7 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
             required
           />
         </div>
-        <button type="submit" className='button-orange'>Register</button>
+        <button type="submit" className='button orange'>Register</button>
       </form>
       <h5>
         Or

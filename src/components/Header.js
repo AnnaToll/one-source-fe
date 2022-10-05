@@ -28,7 +28,6 @@ function Header({ handleClick, loggedIn, setLoggedIn, navPages }) {
   const handleNavClick = (num) => {
     if (location.pathname !== '/') {
       navigate('/');
-      // return;
     }
     window.removeEventListener('scroll', handleScroll2);
     navPages.current[num].scrollIntoView({ behavior: 'smooth' });

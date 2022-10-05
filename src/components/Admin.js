@@ -23,6 +23,42 @@ const Admin = ({ setLoggedIn, navPages }) => {
             return user.accessLevel;
         }
     });
+
+    const getNewToken = async () => {
+        const response = await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/refresh`, { credentials: 'include' });
+        const data = await response.json();
+        if (sessionStorage.getItem('accessToken')) {
+            sessionStorage.removeItem('accessToken');
+        }
+        if (response.status === 200) {
+            sessionStorage.setItem('accessToken', data.accessToken);
+            setLoggedIn(true);
+        } else {
+            if (localStorage.getItem('expiration')) {
+            localStorage.removeItem('expiration');
+            }
+            setLoggedIn(false);
+        }
+    };
+
+    const checkExpiration = async () => {
+    if (localStorage.getItem('expiration')) {
+        const now = Date.now();
+        if (now < localStorage.getItem('expiration')) {
+            if (sessionStorage.getItem('accessToken')) {
+                const token = jwt_decode(sessionStorage.getItem('accessToken'));
+                if (now < token.exp) {
+                setLoggedIn(true);
+                } else {
+                await getNewToken();
+                }
+            } else {
+                await getNewToken();
+            }
+        }
+    }
+    };
+
     const handleClickLogout = async () => {
         sessionStorage.removeItem('accessToken');
         localStorage.removeItem('expiration');
@@ -55,9 +91,9 @@ const Admin = ({ setLoggedIn, navPages }) => {
                 </aside>
                 <section>
                     <Routes>
-                        <Route path='/admin' element={<AdminAdm />} />
-                        <Route path='/developer' element={<AdminDev />} />
-                        <Route path='/support' element={<AdminSupp />} />
+                        <Route path='/admin' element={<AdminAdm checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
+                        <Route path='/developer' element={<AdminDev checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
+                        <Route path='/support' element={<AdminSupp checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
                     </Routes>
                 </section>
             </div>

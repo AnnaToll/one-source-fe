@@ -22,6 +22,9 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
       const data = await response.json();
       if (response.status === 200) {
         setError('');
+        if (sessionStorage.getItem('accessToken')) {
+          sessionStorage.removeItem('accessToken');
+        }
         sessionStorage.setItem('accessToken', data.accessToken);
         if (localStorage.getItem('expiration')) {
           localStorage.removeItem('expiration');
@@ -35,6 +38,7 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
         setTimeout(() => {
           setToggleHide('hidden');
           setSuccess('');
+          navigate('/admin');
         }, 1300);
       } else if (response.status === 409) {
         setError(data.error);
@@ -100,7 +104,7 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
             required
           />
         </div>
-        <button type="submit" className='button orange'>Register</button>
+        <button type="submit" className='btn bg-orange'>Register</button>
       </form>
       <h5>
         Or

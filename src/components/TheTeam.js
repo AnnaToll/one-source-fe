@@ -11,7 +11,7 @@ function TheTeam() {
   const getConsultants = async () => {
     const response = await fetch(`${baseLink}/api/v0/users`);
     const consultants = await response.json();
-    const teamMembers = consultants.filter((element) => { if (element.accessLevel === 'developer') { return element; } });
+    const teamMembers = consultants.filter((element) => { if (element.accessLevel.includes('developer')) { return element; } });
     console.log('team members', teamMembers);
     console.log(consultants);
     return setConsultants(teamMembers);

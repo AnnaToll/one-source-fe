@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 const AdminRoutes = ({ loggedIn }) => {
     
     return (
-      loggedIn ? <Outlet/> : <Navigate to='/'/>
+      loggedIn ? <Outlet /> : <Navigate to='/'/>
     );
 };
 

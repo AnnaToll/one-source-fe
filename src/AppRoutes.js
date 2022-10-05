@@ -40,7 +40,7 @@ function AppRoutes() {
     }
   };
 
-  const checkExpiration = () => {
+  const checkExpiration = async () => {
     if (localStorage.getItem('expiration')) {
       const now = Date.now();
       if (now < localStorage.getItem('expiration')) {
@@ -49,10 +49,10 @@ function AppRoutes() {
           if (now < token.exp) {
             setLoggedIn(true);
           } else {
-            getNewToken();
+            await getNewToken();
           }
         } else {
-          getNewToken();
+          await getNewToken();
         }
       }
     }
@@ -70,18 +70,21 @@ function AppRoutes() {
   useEffect(() => {
     
     checkExpiration();
-    checkExpirationTimeout();
   
-    return () => {
-      clearTimeout(checkExpirationTimeout);
-    };
   }, []);
 
   useEffect(() => {
-    if (loggedIn === true && !sessionStorage.getItem('accessToken')) {
-      getNewToken();
-    } 
-  });
+    if (loggedIn === true) {
+      checkExpirationTimeout();
+    } else {
+      clearTimeout(checkExpirationTimeout);
+    }
+
+    return () => {
+      clearTimeout(checkExpirationTimeout);
+    };
+
+  }, [loggedIn]);
 
   return (
       <Router>
@@ -93,7 +96,11 @@ function AppRoutes() {
         <Routes>
           <Route path='/' element={<App navPages={navPages} />} />
           <Route element={<AdminRoutes loggedIn={ loggedIn }  />}>
-              <Route path='/admin/*' element={<Admin setLoggedIn={ setLoggedIn } navPages={navPages} />} />
+              <Route 
+                path='/admin/*' 
+                element={<Admin setLoggedIn={ setLoggedIn } 
+                navPages={navPages} />}
+              />
           </Route>          
         </Routes>
 

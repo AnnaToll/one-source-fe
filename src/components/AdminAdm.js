@@ -10,7 +10,7 @@ const AdminAdm = ({ checkExpiration, getNewToken }) => {
     const [success, setSuccess] = useState('');
 
     const handleClickDeleteCookies = async () => {
-        await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/deleteCookies`, { credentials: 'include' });
+        await fetch(`${process.env.REACT_APP_API_ADDRESS}/api/v0/admin/delete-cookies`, { credentials: 'include' });
     };
 
     const handleClickAccess = async (e, details, type) => {

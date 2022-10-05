@@ -47,7 +47,7 @@ const Admin = ({ setLoggedIn, navPages }) => {
         if (now < localStorage.getItem('expiration')) {
             if (sessionStorage.getItem('accessToken')) {
                 const token = jwt_decode(sessionStorage.getItem('accessToken'));
-                if (now < token.exp) {
+                if (now < token.exp * 1000) {
                 setLoggedIn(true);
                 } else {
                 await getNewToken();

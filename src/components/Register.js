@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './components.css';
+import jwt_decode from 'jwt-decode';
 
 function Register({ setCurrent, setLoggedIn, setToggleHide }) {
   const [loginDetails, setLoginDetails] = useState({});
@@ -13,6 +14,7 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
     const settings = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify(loginDetails),
     };
     try {
@@ -20,12 +22,23 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
       const data = await response.json();
       if (response.status === 200) {
         setError('');
+        if (sessionStorage.getItem('accessToken')) {
+          sessionStorage.removeItem('accessToken');
+        }
+        sessionStorage.setItem('accessToken', data.accessToken);
+        if (localStorage.getItem('expiration')) {
+          localStorage.removeItem('expiration');
+        }
+        const expiration = Date.now() + (12 * 60 * 60 * 1000);
+        localStorage.setItem('expiration', expiration);
+        const user = jwt_decode(data.accessToken);
+        setSuccess(`Welcome ${user.name}! You are logged in.`);
         setLoggedIn(true);
         setLoginDetails({});
-        setSuccess(`Welcome ${data.name}! You are now logged in.`);
         setTimeout(() => {
           setToggleHide('hidden');
           setSuccess('');
+          navigate('/admin');
         }, 1300);
       } else if (response.status === 409) {
         setError(data.error);
@@ -91,7 +104,7 @@ function Register({ setCurrent, setLoggedIn, setToggleHide }) {
             required
           />
         </div>
-        <button type="submit" className='button-orange'>Register</button>
+        <button type="submit" className='btn bg-orange'>Register</button>
       </form>
       <h5>
         Or

@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './components.css';
 import jwt_decode from 'jwt-decode';
 
 function Login({ setCurrent, setLoggedIn, setToggleHide }) {
-  const [loginDetails, setLoginDetails] = useState({});
 
+  const navigate = useNavigate();
+  const [loginDetails, setLoginDetails] = useState({});
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -21,7 +23,15 @@ function Login({ setCurrent, setLoggedIn, setToggleHide }) {
       const data = await response.json();
       if (response.status === 200) {
         setError('');
+        if (sessionStorage.getItem('accessToken')) {
+          sessionStorage.removeItem('accessToken');
+        }
         sessionStorage.setItem('accessToken', data.accessToken);
+        if (localStorage.getItem('expiration')) {
+          localStorage.removeItem('expiration');
+        }
+        const expiration = Date.now() + (12 * 60 * 60 * 1000);
+        localStorage.setItem('expiration', expiration);
         const user = jwt_decode(data.accessToken);
         setSuccess(`Welcome ${user.name}! You are logged in.`);
         setLoggedIn(true);
@@ -29,6 +39,7 @@ function Login({ setCurrent, setLoggedIn, setToggleHide }) {
         setTimeout(() => {
           setToggleHide('hidden');
           setSuccess('');
+          navigate('/admin');
         }, 1300);
       } else if (response.status === 401) {
         setError(data.error);
@@ -74,7 +85,7 @@ function Login({ setCurrent, setLoggedIn, setToggleHide }) {
             required
           />
         </div>
-        <button type="submit" className='button-orange'>Sign in</button>
+        <button type="submit" className='btn bg-orange'>Sign in</button>
       </form>
       <h5>
         Or

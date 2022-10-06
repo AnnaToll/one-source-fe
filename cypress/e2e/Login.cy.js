@@ -6,10 +6,10 @@ describe('Testing Login', () => {
       .click()
 
     cy.get('.login-container [name=email]')
-      .type('testar@test.se')
+      .type('anna@mail.com')
 
     cy.get('.login-container [name=pwd]')
-      .type('hejhej')
+      .type('123')
     
     cy.get('.login-container [type=submit]')
       .click()
@@ -40,10 +40,10 @@ describe('Testing Login', () => {
       .click()
 
     cy.get('.login-container [name=email]')
-      .type('testar@test.se')
+      .type('anna@mail.com')
 
     cy.get('.login-container [name=pwd]')
-      .type('hejhej1')
+      .type('1234')
     
     cy.get('.login-container [type=submit]')
       .click()

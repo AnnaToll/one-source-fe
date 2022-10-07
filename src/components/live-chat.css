@@ -1,0 +1,46 @@
+.admin-container .chat-support {
+    border: 1px solid black;
+}
+
+.admin-container .messages-container {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    border: 1px solid black;
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+}
+
+
+.admin-container .message {
+    width: 70%;
+}
+
+.admin-container .self {
+    align-self: flex-end;
+}
+
+.admin-container .other {
+    background-color: blanchedalmond;
+}
+
+.chat-support .chat-input-container form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    column-gap: 30px;
+}
+
+.chat-support .chat-input-container button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.chat-support .chat-input-container textarea {
+    flex: 1;
+    height: 50px;
+}
+

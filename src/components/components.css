@@ -364,7 +364,7 @@ nav {
 }
 
 .contact-container h1 {
-    color: grey;
+    color: red;
     text-align: center;
     font-size: 3rem;
     grid-column: 1 / 3;

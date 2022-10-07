@@ -5,6 +5,7 @@ import App from '../App';
 import AdminAdm from './AdminAdm';
 import AdminDev from './AdminDev';
 import AdminSupp from './AdminSupp';
+import AdminTechSupp from './AdminTechSupp';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import jwt_decode from 'jwt-decode';
@@ -76,24 +77,31 @@ const Admin = ({ setLoggedIn, navPages }) => {
             <div className='admin-container'>
                 <i className="bi bi-x" onClick={() => {navigate('/');}}></i>
                 <aside>
-                    {nav.map(access => (
+                    {nav.map((access, index) => (
                         <Link 
                             to={`/admin/${access}`} 
-                            key={nav.indexOf(access)}
-                            onClick={() => setLinkClass(nav.indexOf(access))}
+                            key={index}
+                            onClick={() => setLinkClass(index)}
                         > 
-                            <p className={ linkClass === nav.indexOf(access) ? 'is-active' : '' }>
+                            <p className={ linkClass === index ? 'is-active' : '' }>
                                 {access.charAt(0).toUpperCase() + access.slice(1)}
                             </p>
                         </Link>
                     ))}
+                    {/* <Link 
+                        to='/admin/tech-support' 
+                    > 
+                        <p>Tech Support</p>
+                    </Link> */}
                     <p onClick={handleClickLogout}>Logout</p>
                 </aside>
                 <section>
                     <Routes>
                         <Route path='/admin' element={<AdminAdm checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
-                        <Route path='/developer' element={<AdminDev checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
+                        <Route path='/developer' element={
+                        <AdminDev checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
                         <Route path='/support' element={<AdminSupp checkExpiration={ checkExpiration } getNewToken={ getNewToken } />} />
+                        {/* <Route path='/tech-support' element={<AdminTechSupp />} /> */}
                     </Routes>
                 </section>
             </div>

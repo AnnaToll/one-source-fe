@@ -15,12 +15,6 @@ const AdminAdm = ({ checkExpiration, getNewToken }) => {
 
     const handleClickAccess = async (e, details, type) => {
         e.preventDefault();
-        const accessLevel = details.accessLevel;
-        if (accessLevel !== 'admin' && accessLevel !== 'developer' && accessLevel !== 'support') {
-            setError('Not valid access type');
-            return;
-        }
-        setError('');
         await checkExpiration();
         const settings = {
             method: 'PATCH',

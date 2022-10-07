@@ -8,17 +8,37 @@ const baseLink = process.env.REACT_APP_API_ADDRESS || 'http://localhost:3001';
 function TheTeam() {
   const [consultants, setConsultants] = useState([]);
 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
   const getConsultants = async () => {
     const response = await fetch(`${baseLink}/api/v0/users`);
     const consultants = await response.json();
     const teamMembers = consultants.filter((element) => { if (element.accessLevel.includes('developer')) { return element; } });
     console.log('team members', teamMembers);
     console.log(consultants);
-    return setConsultants(teamMembers);
+    // return setConsultants(teamMembers);
+    const teamMembersShuffled = shuffleArray(teamMembers);
+    return setConsultants(teamMembersShuffled);
   };
   useEffect(() => {
     getConsultants();
+    //shuffla teamet
+    // const intervalID = setInterval(() => {
+    //   console.log('team innan', [...consultants]);
+    //   setConsultants(shuffleArray([...consultants]));
+    //   console.log('team efter', [...consultants]);
+    // }, 20000);
+
+    // return () => clearInterval(intervalID);
   }, []);
+
+
 
   return (
     <main className='teamContainer'>

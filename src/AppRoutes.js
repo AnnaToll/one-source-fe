@@ -18,7 +18,7 @@ function AppRoutes() {
   const [toggleHide, setToggleHide] = useState('hidden');
   const [loggedIn, setLoggedIn] = useState(false);
   const navPages = useRef([]);
-  
+
   const handleClick = () => {
     toggleHide === 'hidden' ? setToggleHide('flex') : setToggleHide('hidden');
   };
@@ -66,11 +66,11 @@ function AppRoutes() {
     }, 60 * 60 * 1000);
   });
 
-  
+
   useEffect(() => {
-    
+
     checkExpiration();
-  
+
   }, []);
 
   useEffect(() => {
@@ -87,26 +87,26 @@ function AppRoutes() {
   }, [loggedIn]);
 
   return (
-      <Router>
-        
-        <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setLoggedIn={setLoggedIn} />
-        <Header handleClick={handleClick} loggedIn={loggedIn} setLoggedIn={setLoggedIn} navPages={navPages} />
-        <div ref={el => navPages.current[0] = el} className="Page-Home"><Home /></div>
+    <Router>
 
-        <Routes>
-          <Route path='/' element={<App navPages={navPages} />} />
-          <Route element={<AdminRoutes loggedIn={ loggedIn }  />}>
-              <Route 
-                path='/admin/*' 
-                element={<Admin setLoggedIn={ setLoggedIn } 
-                navPages={navPages} />}
-              />
-          </Route>          
-        </Routes>
+      <LoginContainer toggleHide={toggleHide} setToggleHide={setToggleHide} handleClick={handleClick} setLoggedIn={setLoggedIn} />
+      <Header handleClick={handleClick} loggedIn={loggedIn} setLoggedIn={setLoggedIn} navPages={navPages} />
+      <div ref={el => navPages.current[0] = el} className="Page-Home"><Home /></div>
 
-        <div className="Page-Footer"><Footer /></div>
-        
-      </Router>
+      <Routes>
+        <Route path='/' element={<App navPages={navPages} />} />
+        <Route element={<AdminRoutes loggedIn={loggedIn} />}>
+          <Route
+            path='/admin/*'
+            element={<Admin setLoggedIn={setLoggedIn}
+              navPages={navPages} />}
+          />
+        </Route>
+      </Routes>
+
+      {/* <div className="Page-Footer"><Footer /></div> */}
+
+    </Router>
   );
 }
 
